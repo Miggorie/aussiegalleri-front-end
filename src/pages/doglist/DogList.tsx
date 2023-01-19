@@ -1,18 +1,51 @@
 import useDogContext from "../../hooks/use-dog-context";
-import { Dog } from "../../components/Interfaces";
+import {
+  Dog,
+  FilterBarProps,
+  SearchBarProps,
+} from "../../components/Interfaces";
 import { useState } from "react";
 import { FilterProps } from "../../components/Interfaces";
-// import SideBarSearch from "../components/tailwind/Sidebar";
 
-function DogList({ searchTerm }: { searchTerm: string }) {
+function DogList({
+  searchTerm,
+  filterTerm,
+}: {
+  searchTerm: string;
+  filterTerm: FilterProps[];
+}) {
   //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
+  console.log(filterTerm);
+  console.log(searchTerm);
 
   let filteredDogs = dogs;
-  if (searchTerm !== "") {
-    filteredDogs = dogs.filter((dog) =>
-      dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+
+  if (searchTerm) {
+    if (searchTerm !== "") {
+      filteredDogs = dogs.filter((dog) =>
+        dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+  } else {
+    filteredDogs = dogs.filter((dog) => {
+      if (!dogs.length || !filterTerm.length || !filterTerm[0].options.length) {
+        console.log("Här vare tomt");
+        return [];
+      }
+
+      let isChecked = false;
+      filterTerm[0].options.forEach((option) => {
+        if (
+          option.checked &&
+          (option.value === "tik" || option.value === "hane") &&
+          (dog.gender === "tik" || dog.gender === "hane")
+        ) {
+          isChecked = true;
+        }
+      });
+      return isChecked;
+    });
   }
 
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";

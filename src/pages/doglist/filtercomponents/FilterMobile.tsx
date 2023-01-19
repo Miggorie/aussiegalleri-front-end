@@ -1,19 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Disclosure } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { filters, subCategories } from "./FilterCategories";
-import { FilterBarProps } from "../../../components/Interfaces";
+import { FilterBarProps, SearchBarProps } from "../../../components/Interfaces";
 import { FilterProps } from "../../../components/Interfaces";
 
-function FilterList() {
-  // const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
+const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
+  const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
 
-  // let filterFunction: FilterProps[] = [];
-  // const handleChange = (event: any) => {
-  //   event.preventDefault();
-  //   setFilterTerm(filterFunction);
-  //   onChange(filterFunction);
-  // };
+  let filterFunction: FilterProps[] = [];
+  const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = event.currentTarget;
+    setFilterTerm((filterTerm) => {
+      console.log("checkad i filter");
+      return filterTerm.map((filter) => {
+        if (filter.id === id) {
+          filter.options = filter.options.map((option) => {
+            if (option.value === value) {
+              option.checked = !option.checked;
+            }
+            return option;
+          });
+        }
+        return filter;
+      });
+    });
+  };
+
+  useEffect(() => {
+    onChange(filterTerm);
+  }, [filterTerm, onChange]);
 
   return (
     <div>
@@ -57,7 +73,7 @@ function FilterList() {
                     {section.options.map((option, optionIdx) => (
                       <div key={option.value} className="flex items-center">
                         <input
-                          // onChange={handleChange}
+                          onChange={handleFilter}
                           id={`filter-mobile-${section.id}-${optionIdx}`}
                           name={`${section.id}[]`}
                           defaultValue={option.value}
@@ -83,6 +99,6 @@ function FilterList() {
       ;
     </div>
   );
-}
+};
 
 export default FilterList;

@@ -1,5 +1,9 @@
 export const sortOptions = [
-  { name: "Bokstavsordning", href: "#", current: true },
+  {
+    name: "Bokstavsordning",
+    href: "href: http://localhost:8888/dogs",
+    current: true,
+  },
   { name: "Nyast i galleriet", href: "#", current: false },
   { name: "Äldst i galleriet", href: "#", current: false },
 ];

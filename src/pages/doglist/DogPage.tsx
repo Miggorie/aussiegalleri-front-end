@@ -14,8 +14,9 @@ import {
   subCategories,
   sortOptions,
 } from "./filtercomponents/FilterCategories";
-import FilterList from "./filtercomponents/FilterList";
+import FilterList from "./filtercomponents/FilterMobile";
 import { FilterProps } from "../../components/Interfaces";
+import FilterMobile from "./filtercomponents/FilterMobile";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -24,7 +25,7 @@ function classNames(...classes: string[]) {
 function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  // const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
+  const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
 
   return (
     <div>
@@ -74,7 +75,9 @@ function DogPage() {
                       </button>
                     </div>
 
-                    <FilterList />
+                    <FilterMobile
+                      onChange={(filterTerm) => setFilterTerm(filterTerm)}
+                    />
                   </Dialog.Panel>
                 </Transition.Child>
               </div>
@@ -86,7 +89,7 @@ function DogPage() {
               <h3 className="text-2xl font-semibold">Aussiegalleriet</h3>
               <div className="w-5/6">
                 <SearchBar
-                  onChange={(searchTerm) => setSearchTerm(searchTerm)}
+                  onChange={(filterTerm) => setSearchTerm(filterTerm)}
                 />
               </div>
 
@@ -236,7 +239,7 @@ function DogPage() {
 
                 {/* Product grid */}
                 <div className="lg:col-span-3">
-                  <DogList searchTerm={searchTerm} />
+                  <DogList searchTerm={searchTerm} filterTerm={filterTerm} />
                   <div />
                   {/* /End replace */}
                 </div>

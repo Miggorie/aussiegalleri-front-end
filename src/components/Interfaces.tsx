@@ -39,12 +39,10 @@ export interface SearchBarProps {
 }
 
 export interface FilterBarProps {
-  onChange: (filters: FilterProps[]) => void;
-  filterTerm?: FilterProps[];
+  onChange: (filter: FilterProps[]) => void;
 }
 
 export interface FilterProps {
-  onChange: [];
   id: string;
   name: string;
   options: {
