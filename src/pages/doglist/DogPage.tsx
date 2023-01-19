@@ -74,9 +74,7 @@ function DogPage() {
                       </button>
                     </div>
 
-                    <FilterList
-                      onChange={(filterTerm) => setFilterTerm(filterTerm)}
-                    />
+                    <FilterList />
                   </Dialog.Panel>
                 </Transition.Child>
               </div>
@@ -87,9 +85,9 @@ function DogPage() {
             <div className="flex items-baseline border-b border-stone-200 pt-14 pb-8">
               <h3 className="text-2xl font-semibold">Aussiegalleriet</h3>
               <div className="w-5/6">
-                {/* <SearchBar
+                <SearchBar
                   onChange={(searchTerm) => setSearchTerm(searchTerm)}
-                /> */}
+                />
               </div>
 
               <div className="flex items-center">

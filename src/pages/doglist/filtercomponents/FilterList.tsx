@@ -5,15 +5,15 @@ import { filters, subCategories } from "./FilterCategories";
 import { FilterBarProps } from "../../../components/Interfaces";
 import { FilterProps } from "../../../components/Interfaces";
 
-const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
-  const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
+function FilterList() {
+  // const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
 
-  let filterFunction: FilterProps[] = [];
-  const handleChange = (event: any) => {
-    event.preventDefault();
-    setFilterTerm(filterFunction);
-    onChange(filterFunction);
-  };
+  // let filterFunction: FilterProps[] = [];
+  // const handleChange = (event: any) => {
+  //   event.preventDefault();
+  //   setFilterTerm(filterFunction);
+  //   onChange(filterFunction);
+  // };
 
   return (
     <div>
@@ -57,7 +57,7 @@ const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
                     {section.options.map((option, optionIdx) => (
                       <div key={option.value} className="flex items-center">
                         <input
-                          onChange={handleChange}
+                          // onChange={handleChange}
                           id={`filter-mobile-${section.id}-${optionIdx}`}
                           name={`${section.id}[]`}
                           defaultValue={option.value}
@@ -83,6 +83,6 @@ const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
       ;
     </div>
   );
-};
+}
 
 export default FilterList;
