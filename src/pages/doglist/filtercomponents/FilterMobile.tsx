@@ -10,14 +10,15 @@ const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
 
   let filterFunction: FilterProps[] = [];
   const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = event.currentTarget;
+    const { id, value, name } = event.currentTarget;
     setFilterTerm((filterTerm) => {
-      console.log("checkad i filter");
+      console.log("THIS IS LOGGED");
       return filterTerm.map((filter) => {
-        if (filter.id === id) {
+        if (filter.name === name) {
           filter.options = filter.options.map((option) => {
             if (option.value === value) {
               option.checked = !option.checked;
+              console.log("THIS IS NOT LOGGED");
             }
             return option;
           });
@@ -29,7 +30,7 @@ const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
 
   useEffect(() => {
     onChange(filterTerm);
-  }, [filterTerm, onChange]);
+  }, []);
 
   return (
     <div>
