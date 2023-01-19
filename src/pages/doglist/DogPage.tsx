@@ -24,7 +24,7 @@ function classNames(...classes: string[]) {
 function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
+  // const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
 
   return (
     <div>
@@ -238,7 +238,7 @@ function DogPage() {
 
                 {/* Product grid */}
                 <div className="lg:col-span-3">
-                  <DogList filterTerm={filterTerm} />
+                  <DogList searchTerm={searchTerm} />
                   <div />
                   {/* /End replace */}
                 </div>

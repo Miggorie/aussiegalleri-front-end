@@ -4,7 +4,7 @@ import Header from "./components/headercomponent/Navbar";
 import SingleDog from "./pages/dog";
 import About from "./pages/about/About";
 import Faq from "./pages/faq/Faq";
-import Contact from "./pages/Contact";
+import Contact from "./pages/contact";
 import Home from "./pages/home/home";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
