@@ -10,7 +10,8 @@ const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
 
   let filterFunction: FilterProps[] = [];
   const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value, name } = event.currentTarget;
+    const { id, value, name } = event.target;
+    console.log(event.target);
     setFilterTerm((filterTerm) => {
       console.log("THIS IS LOGGED");
       return filterTerm.map((filter) => {
@@ -74,9 +75,11 @@ const FilterList: React.FC<FilterBarProps> = ({ onChange }) => {
                     {section.options.map((option, optionIdx) => (
                       <div key={option.value} className="flex items-center">
                         <input
-                          onChange={handleFilter}
+                          onChange={(event) => {
+                            console.log("hej");
+                          }}
                           id={`filter-mobile-${section.id}-${optionIdx}`}
-                          name={`${section.id}[]`}
+                          name={`${section.id}`}
                           defaultValue={option.value}
                           type="checkbox"
                           defaultChecked={option.checked}
