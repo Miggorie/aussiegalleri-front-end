@@ -1,50 +1,70 @@
-export const sortOptions = [
-  {
-    name: "Bokstavsordning",
-    href: "href: http://localhost:8888/dogs",
-    current: true,
-  },
-  { name: "Nyast i galleriet", href: "#", current: false },
-  { name: "Äldst i galleriet", href: "#", current: false },
-];
-export const subCategories = [
-  { name: "Alla hundar", href: "#" },
-  { name: "Vuxna hundar", href: "#" },
-  { name: "Valpar", href: "#" },
-];
-export const filters = [
-  {
-    id: "size",
-    name: "size",
-    options: [
-      { value: "tik", label: "Tik", checked: true },
-      { value: "hane", label: "Hane", checked: true },
-    ],
-  },
+import Test from "./test";
+import {
+  Filters,
+  SortOption,
+  SubCategories,
+} from "../../../components/Interfaces";
 
-  {
-    id: "color",
-    name: "Färg",
-    options: [
-      { value: "allColors", label: "Alla färger", checked: true },
-      { value: "Blackwhitetan", label: "Svart trefärgad", checked: false },
-      { value: "beige", label: "Röd trefärgad", checked: false },
-      { value: "blue", label: "Blue merle med tan", checked: false },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
-  {
-    id: "category",
-    name: "Ursprungsland",
-    options: [
-      { value: "new-arrivals", label: "Alla länder", checked: true },
-      { value: "new-arrivals", label: "Sverige", checked: false },
-      { value: "sale", label: "Norge", checked: false },
-      { value: "travel", label: "Finland", checked: false },
-      { value: "organization", label: "Italien", checked: false },
-      { value: "accessories", label: "USA", checked: false },
-    ],
-  },
-];
+function FilterCategories() {
+  const sortOptions: SortOption[] = [
+    {
+      name: "Bokstavsordning",
+      href: "http://localhost:8888/dogs",
+      current: true,
+    },
+    { name: "Nyast i galleriet", href: "#", current: false },
+    { name: "Äldst i galleriet", href: "#", current: false },
+  ];
+  const subCategories: SubCategories[] = [
+    { name: "Alla hundar", href: "http://localhost:8888/dogs" },
+    { name: "Vuxna hundar", href: "#" },
+    { name: "Valpar", href: "#" },
+  ];
+  const filters: Filters[] = [
+    {
+      id: "sex",
+      name: "Kön",
+      options: [
+        { value: "tik", label: "Tik", checked: true },
+        { value: "hane", label: "Hane", checked: true },
+      ],
+    },
+    {
+      id: "color",
+      name: "Färg",
+      options: [
+        { value: "Blackwhitetan", label: "Svart trefärgad", checked: true },
+        { value: "beige", label: "Röd trefärgad", checked: true },
+        { value: "blue", label: "Blue merle med tan", checked: true },
+        { value: "brown", label: "Brown", checked: true },
+        { value: "green", label: "Green", checked: true },
+        { value: "purple", label: "Purple", checked: true },
+      ],
+    },
+    {
+      id: "category",
+      name: "Ursprungsland",
+      options: [
+        { value: "new-arrivals", label: "Sverige", checked: true },
+        { value: "sale", label: "Norge", checked: true },
+        { value: "travel", label: "Finland", checked: true },
+        { value: "organization", label: "Italien", checked: true },
+        { value: "accessories", label: "USA", checked: true },
+      ],
+    },
+  ];
+
+  return (
+    <div>
+      <div>
+        <Test
+          sortOptions={sortOptions}
+          subCategories={subCategories}
+          filters={filters}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default FilterCategories;

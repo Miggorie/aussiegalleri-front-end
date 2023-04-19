@@ -1,0 +1,16 @@
+@mixin accordion-button {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  overflow: hidden;
+
+  &.accordion-content-visible {
+    visibility: visible;
+    opacity: 1;
+    overflow: hidden;
+  }
+}
+
+.dold {
+  @include accordion-button();
+}

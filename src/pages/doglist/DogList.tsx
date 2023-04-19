@@ -1,10 +1,5 @@
 import useDogContext from "../../hooks/use-dog-context";
-import {
-  Dog,
-  FilterBarProps,
-  SearchBarProps,
-} from "../../components/Interfaces";
-import { useState } from "react";
+import { Dog } from "../../components/Interfaces";
 import { FilterProps } from "../../components/Interfaces";
 
 function DogList({
@@ -19,18 +14,17 @@ function DogList({
   console.log(filterTerm);
   console.log(searchTerm);
 
-  let filteredDogs = dogs;
+  let searchDogs = dogs;
 
   if (searchTerm) {
     if (searchTerm !== "") {
-      filteredDogs = dogs.filter((dog) =>
+      searchDogs = dogs.filter((dog) =>
         dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
   } else {
-    filteredDogs = dogs.filter((dog) => {
+    searchDogs = dogs.filter((dog) => {
       if (!dogs.length || !filterTerm.length || !filterTerm[0].options.length) {
-        console.log("Här vare tomt");
         return [];
       }
 
@@ -47,7 +41,6 @@ function DogList({
       return isChecked;
     });
   }
-
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
   return (
@@ -55,21 +48,21 @@ function DogList({
       <div className="bg-white">
         <h2 className="sr-only">Hundar</h2>
         <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
-          {filteredDogs?.map((filteredDog: Dog) => (
+          {searchDogs?.map((searchDog: Dog) => (
             <a
-              key={filteredDog.dogID}
-              href={`/dogs/${filteredDog.url}`}
+              key={searchDog.dogID}
+              href={`/dogs/${searchDog.url}`}
               className="group"
             >
               <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
                 <img
-                  src={baseUrl + filteredDog.date + "/" + filteredDog.standLeft}
+                  src={baseUrl + searchDog.date + "/" + searchDog.standLeft}
                   alt="hund"
                   className="h-full w-full object-cover object-center group-hover:opacity-75"
                 />
               </div>
               <h3 className="mt-4 mb-10 text-s text-gray-700">
-                {filteredDog.name}
+                {searchDog.name}
               </h3>
             </a>
           ))}

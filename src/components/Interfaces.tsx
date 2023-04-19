@@ -51,3 +51,23 @@ export interface FilterProps {
     checked: boolean;
   }[];
 }
+
+export interface SortOption {
+  name: string;
+  href: string;
+  current: boolean;
+}
+export interface SubCategories {
+  name: string;
+  href: string;
+}
+export interface Filters {
+  name: string;
+  id: string;
+  options: FilterOption[];
+}
+export interface FilterOption {
+  value: string;
+  label: string;
+  checked: boolean;
+}
