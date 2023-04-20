@@ -9,7 +9,6 @@ function DogList({
   searchTerm: string;
   filterTerm: FilterProps[];
 }) {
-  //Using the context to fetch all dogs from database
   const { dogs } = useDogContext();
   console.log(filterTerm);
   console.log(searchTerm);
@@ -27,18 +26,6 @@ function DogList({
       if (!dogs.length || !filterTerm.length || !filterTerm[0].options.length) {
         return [];
       }
-
-      let isChecked = false;
-      filterTerm[0].options.forEach((option) => {
-        if (
-          option.checked &&
-          (option.value === "tik" || option.value === "hane") &&
-          (dog.gender === "tik" || dog.gender === "hane")
-        ) {
-          isChecked = true;
-        }
-      });
-      return isChecked;
     });
   }
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";

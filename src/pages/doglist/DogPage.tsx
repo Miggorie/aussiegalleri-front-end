@@ -10,6 +10,7 @@ import {
 import SearchBar from "./SearchBar";
 import DogList from "./DogList";
 import { FilterProps } from "../../components/Interfaces";
+import FilterCategories from "./filtercomponents/FilterCategories";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -81,7 +82,6 @@ function DogPage() {
                   onChange={(filterTerm) => setSearchTerm(filterTerm)}
                 />
               </div>
-
               <div className="flex items-center">
                 <button
                   type="button"
@@ -101,16 +101,11 @@ function DogPage() {
               </div>
             </div>
             <section aria-labelledby="products-heading" className="pt-6 pb-24">
-              <h2 id="products-heading" className="sr-only">
-                Hundar
-              </h2>
-
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                {/* Product grid */}
+                <FilterCategories />
                 <div className="lg:col-span-3">
                   <DogList searchTerm={searchTerm} filterTerm={filterTerm} />
                   <div />
-                  {/* /End replace */}
                 </div>
               </div>
             </section>

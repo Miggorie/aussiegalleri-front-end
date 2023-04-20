@@ -1,0 +1,43 @@
+.filter-sidebar-container {
+  max-width: 20rem;
+}
+
+.filter-all-container {
+  margin-top: 2rem;
+}
+
+.h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.filter-list-heading {
+  border-bottom: 0.1rem solid #57534f;
+}
+
+.filter-checkbox {
+  padding-bottom: 1rem;
+}
+.filter-checkbox input[type=checkbox] {
+  padding: 0.5rem;
+  margin-right: 8px;
+  color: #57534f;
+  border-radius: 0.2rem;
+}
+.filter-checkbox label {
+  font-style: normal;
+  margin-bottom: 2rem;
+}
+
+.filter-button {
+  min-width: 15rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  text-align: left;
+}
+
+.filter-subcategory {
+  line-height: 2rem;
+}/*# sourceMappingURL=filter-style.css.map */
