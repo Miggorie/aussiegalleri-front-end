@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FilterProps, SearchBarProps } from "../../components/Interfaces";
+import { SearchBarProps } from "../../components/Interfaces";
 
 const SearchBar: React.FC<SearchBarProps> = ({ onChange }) => {
   const [searchTerm, setSearchTerm] = useState("");

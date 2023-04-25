@@ -9,7 +9,6 @@ import Home from "./pages/home/home";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DogPage from "./pages/doglist/DogPage";
-import FilterCategories from "./pages/doglist/filtercomponents/FilterCategories";
 
 function App() {
   const { fetchData } = useContext(DogsContext);
@@ -29,7 +28,6 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<Faq />} />
-          <Route path="test" element={<FilterCategories />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,5 +1,5 @@
-import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
+import { Fragment, SetStateAction, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -9,8 +9,8 @@ import {
 } from "@heroicons/react/20/solid";
 import SearchBar from "./SearchBar";
 import DogList from "./DogList";
-import { FilterProps } from "../../components/Interfaces";
-import FilterCategories from "./filtercomponents/FilterCategories";
+import { FilterOption } from "../../components/Interfaces";
+import FilterSidebar from "./filtercomponents/FilterSidebar";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -19,8 +19,16 @@ function classNames(...classes: string[]) {
 function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterTerm, setFilterTerm] = useState<FilterProps[]>([]);
+  const [checkboxStatus, setCheckboxStatus] = useState<{
+    [key: string]: boolean;
+  }>({});
 
+  const handleCheckboxChange = (option: string, checked: boolean) => {
+    setCheckboxStatus((prevState) => ({
+      ...prevState,
+      [option]: checked,
+    }));
+  };
   return (
     <div>
       <div className="bg-white">
@@ -76,7 +84,7 @@ function DogPage() {
 
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-baseline border-b border-stone-200 pt-14 pb-8">
-              <h3 className="text-2xl font-semibold">Aussiegalleriet</h3>
+              <h1 className="text-2xl font-semibold">Aussiegalleriet</h1>
               <div className="w-5/6">
                 <SearchBar
                   onChange={(filterTerm) => setSearchTerm(filterTerm)}
@@ -102,9 +110,15 @@ function DogPage() {
             </div>
             <section aria-labelledby="products-heading" className="pt-6 pb-24">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                <FilterCategories />
+                <FilterSidebar
+                  checkboxStatus={checkboxStatus}
+                  handleCheckboxChange={handleCheckboxChange}
+                />
                 <div className="lg:col-span-3">
-                  <DogList searchTerm={searchTerm} filterTerm={filterTerm} />
+                  <DogList
+                    searchTerm={searchTerm}
+                    checkboxStatus={checkboxStatus}
+                  />
                   <div />
                 </div>
               </div>

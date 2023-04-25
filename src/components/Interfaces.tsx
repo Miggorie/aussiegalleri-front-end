@@ -38,20 +38,6 @@ export interface SearchBarProps {
   onChange: (search: string) => void;
 }
 
-export interface FilterBarProps {
-  onChange: (filter: FilterProps[]) => void;
-}
-
-export interface FilterProps {
-  id: string;
-  name: string;
-  options: {
-    value: string;
-    label: string;
-    checked: boolean;
-  }[];
-}
-
 export interface SortOption {
   name: string;
   href: string;
@@ -62,12 +48,16 @@ export interface SubCategories {
   href: string;
 }
 export interface Filters {
-  name: string;
   id: string;
-  options: FilterOption[];
+  name: string;
+  options: {
+    value: string;
+    label: string;
+    checked: boolean;
+  }[];
 }
 export interface FilterOption {
   value: string;
-  label: string;
   checked: boolean;
+  label: string;
 }

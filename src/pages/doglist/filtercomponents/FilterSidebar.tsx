@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./scss/filter-style.css";
 import {
-  FilterOption,
   Filters,
   SortOption,
   SubCategories,
 } from "../../../components/Interfaces";
 
-function FilterSidebar(props: {
-  sortOptions: SortOption[];
-  subCategories: SubCategories[];
-  filters: Filters[];
-}) {
-  const { subCategories, filters } = props;
+interface CheckboxStatus {
+  [key: string]: boolean;
+}
+
+const FilterSidebar = ({
+  checkboxStatus,
+  handleCheckboxChange,
+}: {
+  checkboxStatus: CheckboxStatus;
+  handleCheckboxChange: (label: string, checked: boolean) => void;
+}) => {
   const [showOptions, setShowOptions] = useState(-1);
-  const [checkboxStatus, setCheckboxStatus] = useState<{
-    [key: string]: boolean;
-  }>({});
 
   const handleClick = (
     index: number,
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    event.preventDefault(); // Prevent form submission
-    console.log("test");
+    event.preventDefault();
     setShowOptions((current) => {
       if (current === index) {
         return -1;
@@ -32,11 +32,54 @@ function FilterSidebar(props: {
       }
     });
   };
-  const handleChange = (optionLabel: string) => {
-    setCheckboxStatus((prevStatus) => {
-      return { ...prevStatus, [optionLabel]: !prevStatus[optionLabel] };
-    });
-  };
+
+  const sortOptions: SortOption[] = [
+    {
+      name: "Bokstavsordning",
+      href: "http://localhost:8888/dogs",
+      current: true,
+    },
+    { name: "Nyast i galleriet", href: "#", current: false },
+    { name: "Äldst i galleriet", href: "#", current: false },
+  ];
+  const subCategories: SubCategories[] = [
+    { name: "Alla hundar", href: "http://localhost:8888/dogs" },
+    { name: "Vuxna hundar", href: "#" },
+    { name: "Valpar", href: "#" },
+  ];
+  const filters: Filters[] = [
+    {
+      id: "sex",
+      name: "Kön",
+      options: [
+        { value: "tik", label: "Tik", checked: true },
+        { value: "hane", label: "Hane", checked: true },
+      ],
+    },
+    {
+      id: "color",
+      name: "Färg",
+      options: [
+        { value: "black-tre", label: "Svart trefärgad", checked: false },
+        { value: "red-tri", label: "Röd trefärgad", checked: false },
+        { value: "blue-tan", label: "Blue merle med tan", checked: false },
+        { value: "brown", label: "Brown", checked: false },
+        { value: "green", label: "Green", checked: false },
+        { value: "purple", label: "Purple", checked: false },
+      ],
+    },
+    {
+      id: "category",
+      name: "Ursprungsland",
+      options: [
+        { value: "sverige", label: "Sverige", checked: false },
+        { value: "norge", label: "Norge", checked: false },
+        { value: "finland", label: "Finland", checked: false },
+        { value: "italien", label: "Italien", checked: false },
+        { value: "usa", label: "USA", checked: false },
+      ],
+    },
+  ];
 
   return (
     <div>
@@ -66,16 +109,16 @@ function FilterSidebar(props: {
               {showOptions === index && (
                 <div className="filtrering-checkboxar">
                   {filter.options.map((option) => (
-                    <div key={option.label} className="filter-checkbox">
+                    <div key={option.value} className="filter-checkbox">
                       <input
                         type="checkbox"
-                        id={option.value}
-                        checked={checkboxStatus[option.label] || false}
-                        onChange={() => {
-                          handleChange(option.label);
-                        }}
+                        name={option.label}
+                        checked={checkboxStatus[option.label]}
+                        onChange={(e) =>
+                          handleCheckboxChange(option.label, e.target.checked)
+                        }
                       />
-                      <label htmlFor={option.value}>{option.label}</label>
+                      <label htmlFor={option.label}>{option.label}</label>
                     </div>
                   ))}
                 </div>
@@ -86,5 +129,5 @@ function FilterSidebar(props: {
       </form>
     </div>
   );
-}
+};
 export default FilterSidebar;

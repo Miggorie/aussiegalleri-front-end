@@ -1,33 +1,32 @@
+import React, { useState, useEffect, SetStateAction } from "react";
 import useDogContext from "../../hooks/use-dog-context";
-import { Dog } from "../../components/Interfaces";
-import { FilterProps } from "../../components/Interfaces";
+import { Dog, Filters } from "../../components/Interfaces";
 
-function DogList({
-  searchTerm,
-  filterTerm,
-}: {
+interface DogListProps {
   searchTerm: string;
-  filterTerm: FilterProps[];
-}) {
+  checkboxStatus: { [key: string]: boolean };
+}
+
+function DogList({ searchTerm, checkboxStatus }: DogListProps) {
   const { dogs } = useDogContext();
-  console.log(filterTerm);
-  console.log(searchTerm);
-
   let searchDogs = dogs;
+  // const filteredDogs = filterDogs(checkboxStatus);
 
-  if (searchTerm) {
-    if (searchTerm !== "") {
-      searchDogs = dogs.filter((dog) =>
-        dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-  } else {
-    searchDogs = dogs.filter((dog) => {
-      if (!dogs.length || !filterTerm.length || !filterTerm[0].options.length) {
-        return [];
-      }
-    });
+  const areAllTrue = Object.values(checkboxStatus).every(
+    (value) => value === true
+  );
+
+  if (areAllTrue) {
+    console.log(checkboxStatus);
   }
+
+  // Filter dogs by search term
+  if (searchTerm && searchTerm !== "") {
+    searchDogs = searchDogs.filter((dog) =>
+      dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
 
   return (
