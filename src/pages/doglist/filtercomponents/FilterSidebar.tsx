@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./scss/filter-style.css";
 import {
   Filters,
@@ -10,13 +10,19 @@ interface CheckboxStatus {
   [key: string]: boolean;
 }
 
+interface FilterSidebarProps {
+  checkboxStatus: CheckboxStatus;
+  setCheckboxStatus: (checkboxStatus: CheckboxStatus) => void;
+}
+
 const FilterSidebar = ({
   checkboxStatus,
-  handleCheckboxChange,
-}: {
-  checkboxStatus: CheckboxStatus;
-  handleCheckboxChange: (label: string, checked: boolean) => void;
-}) => {
+  setCheckboxStatus,
+}: FilterSidebarProps) => {
+  const handleCheckboxChange = (filterOption: string, checked: boolean) => {
+    setCheckboxStatus({ ...checkboxStatus, [filterOption]: checked });
+  };
+
   const [showOptions, setShowOptions] = useState(-1);
 
   const handleClick = (
@@ -113,7 +119,7 @@ const FilterSidebar = ({
                       <input
                         type="checkbox"
                         name={option.label}
-                        checked={checkboxStatus[option.label]}
+                        checked={checkboxStatus[option.value]}
                         onChange={(e) =>
                           handleCheckboxChange(option.label, e.target.checked)
                         }

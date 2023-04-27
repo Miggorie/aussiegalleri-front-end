@@ -23,12 +23,6 @@ function DogPage() {
     [key: string]: boolean;
   }>({});
 
-  const handleCheckboxChange = (option: string, checked: boolean) => {
-    setCheckboxStatus((prevState) => ({
-      ...prevState,
-      [option]: checked,
-    }));
-  };
   return (
     <div>
       <div className="bg-white">
@@ -112,7 +106,7 @@ function DogPage() {
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                 <FilterSidebar
                   checkboxStatus={checkboxStatus}
-                  handleCheckboxChange={handleCheckboxChange}
+                  setCheckboxStatus={setCheckboxStatus}
                 />
                 <div className="lg:col-span-3">
                   <DogList
