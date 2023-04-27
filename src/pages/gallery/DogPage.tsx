@@ -1,4 +1,4 @@
-import { Fragment, SetStateAction, useState } from "react";
+import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
@@ -9,23 +9,62 @@ import {
 } from "@heroicons/react/20/solid";
 import SearchBar from "./SearchBar";
 import DogList from "./DogList";
-import { FilterOption } from "../../components/Interfaces";
-import FilterSidebar from "./filtercomponents/FilterSidebar";
-import React, { Component } from "react";
+import {
+  genderOptions,
+  colorOptions,
+  originOptions,
+} from "./filtercomponents/FilterOptions";
+import { Checkbox } from "./filtercomponents/Checkbox";
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+const renderListItems = (
+  options: { label: string }[],
+  state: boolean[],
+  onChange: (position: number) => void
+) =>
+  options.map(({ label }, index) => (
+    <li key={index}>
+      <Checkbox
+        label={label}
+        state={state[index]}
+        onChange={() => onChange(index)}
+      />
+    </li>
+  ));
 
-type CheckboxProps = {
-  genderState: any;
-  colorState: any;
-  originState: any;
-};
-
-function DogPage({ genderState, colorState, originState }: CheckboxProps) {
+function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [genderState, setGenderState] = useState(
+    new Array(genderOptions.length).fill(false)
+  );
+  const [colorState, setColorState] = useState(
+    new Array(colorOptions.length).fill(false)
+  );
+  const [originState, setOriginState] = useState(
+    new Array(originOptions.length).fill(false)
+  );
+
+  const handleGenderChange = (position: number) => {
+    const updatedGenderState = genderState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setGenderState(updatedGenderState);
+  };
+
+  const handleColorChange = (position: number) => {
+    const updatedColorState = colorState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setColorState(updatedColorState);
+  };
+
+  const handleOriginChange = (position: number) => {
+    const updatedOriginState = originState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setOriginState(updatedOriginState);
+  };
 
   return (
     <div>
@@ -108,6 +147,32 @@ function DogPage({ genderState, colorState, originState }: CheckboxProps) {
             </div>
             <section aria-labelledby="products-heading" className="pt-6 pb-24">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+                <div className="App">
+                  <h3>Kön</h3>
+                  <ul className="toppings-list">
+                    {renderListItems(
+                      genderOptions,
+                      genderState,
+                      handleGenderChange
+                    )}
+                  </ul>
+                  <h3>Färg</h3>
+                  <ul className="toppings-list">
+                    {renderListItems(
+                      colorOptions,
+                      colorState,
+                      handleColorChange
+                    )}
+                  </ul>
+                  <h3>Ursprung</h3>
+                  <ul className="toppings-list">
+                    {renderListItems(
+                      originOptions,
+                      originState,
+                      handleOriginChange
+                    )}
+                  </ul>
+                </div>
                 <div className="lg:col-span-3">
                   <DogList
                     searchTerm={searchTerm}

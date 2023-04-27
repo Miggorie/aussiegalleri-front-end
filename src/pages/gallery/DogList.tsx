@@ -1,6 +1,5 @@
-import React, { useState, useEffect, SetStateAction } from "react";
 import useDogContext from "../../hooks/use-dog-context";
-import { Dog, Filters } from "../../components/Interfaces";
+import { Dog } from "../../components/Interfaces";
 
 interface DogListProps {
   searchTerm: string;
@@ -15,14 +14,15 @@ function DogList(
 ) {
   const { dogs } = useDogContext();
   let searchDogs = dogs;
-  // const filteredDogs = filterDogs(checkboxStatus);
 
-  // const areAllTrue = Object.values(checkboxStatus).every(
+  console.log(genderState);
+
+  // const areAllTrue = Object.values(genderState).every(
   //   (value) => value === true
   // );
 
   // if (areAllTrue) {
-  //   console.log(checkboxStatus);
+  //   console.log(genderState);
   // }
 
   // Filter dogs by search term
