@@ -1,139 +1,74 @@
-import React, { useState } from "react";
-import "./scss/filter-style.css";
-import {
-  Filters,
-  SortOption,
-  SubCategories,
-} from "../../../components/Interfaces";
+import { useState } from "react";
+import { genderOptions, colorOptions, originOptions } from "./FilterOptions";
+import { Checkbox } from "./Checkbox";
+import DogPage from "../DogPage";
 
-interface CheckboxStatus {
-  [key: string]: boolean;
-}
+const renderListItems = (
+  options: { label: string }[],
+  state: boolean[],
+  onChange: (position: number) => void
+) =>
+  options.map(({ label }, index) => (
+    <li key={index}>
+      <Checkbox
+        label={label}
+        state={state[index]}
+        onChange={() => onChange(index)}
+      />
+    </li>
+  ));
 
-interface FilterSidebarProps {
-  checkboxStatus: CheckboxStatus;
-  setCheckboxStatus: (checkboxStatus: CheckboxStatus) => void;
-}
+export default function FilterSidebar() {
+  const [genderState, setGenderState] = useState(
+    new Array(genderOptions.length).fill(false)
+  );
+  const [colorState, setColorState] = useState(
+    new Array(colorOptions.length).fill(false)
+  );
+  const [originState, setOriginState] = useState(
+    new Array(originOptions.length).fill(false)
+  );
 
-const FilterSidebar = ({
-  checkboxStatus,
-  setCheckboxStatus,
-}: FilterSidebarProps) => {
-  const handleCheckboxChange = (filterOption: string, checked: boolean) => {
-    setCheckboxStatus({ ...checkboxStatus, [filterOption]: checked });
+  const handleGenderChange = (position: number) => {
+    const updatedGenderState = genderState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setGenderState(updatedGenderState);
   };
 
-  const [showOptions, setShowOptions] = useState(-1);
-
-  const handleClick = (
-    index: number,
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    event.preventDefault();
-    setShowOptions((current) => {
-      if (current === index) {
-        return -1;
-      } else {
-        return index;
-      }
-    });
+  const handleColorChange = (position: number) => {
+    const updatedColorState = colorState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setColorState(updatedColorState);
   };
 
-  const sortOptions: SortOption[] = [
-    {
-      name: "Bokstavsordning",
-      href: "http://localhost:8888/dogs",
-      current: true,
-    },
-    { name: "Nyast i galleriet", href: "#", current: false },
-    { name: "Äldst i galleriet", href: "#", current: false },
-  ];
-  const subCategories: SubCategories[] = [
-    { name: "Alla hundar", href: "http://localhost:8888/dogs" },
-    { name: "Vuxna hundar", href: "#" },
-    { name: "Valpar", href: "#" },
-  ];
-  const filters: Filters[] = [
-    {
-      id: "sex",
-      name: "Kön",
-      options: [
-        { value: "tik", label: "Tik", checked: true },
-        { value: "hane", label: "Hane", checked: true },
-      ],
-    },
-    {
-      id: "color",
-      name: "Färg",
-      options: [
-        { value: "black-tre", label: "Svart trefärgad", checked: false },
-        { value: "red-tri", label: "Röd trefärgad", checked: false },
-        { value: "blue-tan", label: "Blue merle med tan", checked: false },
-        { value: "brown", label: "Brown", checked: false },
-        { value: "green", label: "Green", checked: false },
-        { value: "purple", label: "Purple", checked: false },
-      ],
-    },
-    {
-      id: "category",
-      name: "Ursprungsland",
-      options: [
-        { value: "sverige", label: "Sverige", checked: false },
-        { value: "norge", label: "Norge", checked: false },
-        { value: "finland", label: "Finland", checked: false },
-        { value: "italien", label: "Italien", checked: false },
-        { value: "usa", label: "USA", checked: false },
-      ],
-    },
-  ];
+  const handleOriginChange = (position: number) => {
+    const updatedOriginState = originState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setOriginState(updatedOriginState);
+  };
 
   return (
-    <div>
-      <form className="filter-sidebar-container">
-        <h2 className="h2">Filtrera</h2>
-        <ul>
-          {subCategories.map((subCategory) => (
-            <li className="filter-subcategory" key={subCategory.name}>
-              <a href={subCategory.href}>{subCategory.name}</a>
-            </li>
-          ))}
-        </ul>
-        <div className="filter-all-container">
-          {filters.map((filter, index: number) => (
-            <fieldset
-              className="filtrering-checkbox-container"
-              key={filter.name}
-            >
-              <legend>
-                <button
-                  className="filter-button"
-                  onClick={(event) => handleClick(index, event)}
-                >
-                  {filter.name}
-                </button>
-              </legend>
-              {showOptions === index && (
-                <div className="filtrering-checkboxar">
-                  {filter.options.map((option) => (
-                    <div key={option.value} className="filter-checkbox">
-                      <input
-                        type="checkbox"
-                        name={option.label}
-                        checked={checkboxStatus[option.value]}
-                        onChange={(e) =>
-                          handleCheckboxChange(option.label, e.target.checked)
-                        }
-                      />
-                      <label htmlFor={option.label}>{option.label}</label>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </fieldset>
-          ))}
-        </div>
-      </form>
+    <div className="App">
+      <h3>Kön</h3>
+      <ul className="toppings-list">
+        {renderListItems(genderOptions, genderState, handleGenderChange)}
+      </ul>
+      <h3>Färg</h3>
+      <ul className="toppings-list">
+        {renderListItems(colorOptions, colorState, handleColorChange)}
+      </ul>
+      <h3>Ursprung</h3>
+      <ul className="toppings-list">
+        {renderListItems(originOptions, originState, handleOriginChange)}
+      </ul>
+      <DogPage
+        genderState={genderState}
+        colorState={colorState}
+        originState={originState}
+      />
     </div>
   );
-};
-export default FilterSidebar;
+}

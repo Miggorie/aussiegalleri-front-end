@@ -8,7 +8,7 @@ import Contact from "./pages/contact";
 import Home from "./pages/home/home";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import DogPage from "./pages/doglist/DogPage";
+import FilterSidebar from "./pages/doglist/filtercomponents/FilterSidebar";
 
 function App() {
   const { fetchData } = useContext(DogsContext);
@@ -23,7 +23,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="dogs" element={<DogPage />} />
+          <Route path="dogs" element={<FilterSidebar />} />
           <Route path="dogs/:name" element={<SingleDog />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />

@@ -11,17 +11,21 @@ import SearchBar from "./SearchBar";
 import DogList from "./DogList";
 import { FilterOption } from "../../components/Interfaces";
 import FilterSidebar from "./filtercomponents/FilterSidebar";
+import React, { Component } from "react";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-function DogPage() {
+type CheckboxProps = {
+  genderState: any;
+  colorState: any;
+  originState: any;
+};
+
+function DogPage({ genderState, colorState, originState }: CheckboxProps) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [checkboxStatus, setCheckboxStatus] = useState<{
-    [key: string]: boolean;
-  }>({});
 
   return (
     <div>
@@ -104,14 +108,12 @@ function DogPage() {
             </div>
             <section aria-labelledby="products-heading" className="pt-6 pb-24">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                <FilterSidebar
-                  checkboxStatus={checkboxStatus}
-                  setCheckboxStatus={setCheckboxStatus}
-                />
                 <div className="lg:col-span-3">
                   <DogList
                     searchTerm={searchTerm}
-                    checkboxStatus={checkboxStatus}
+                    genderState={genderState}
+                    colorState={colorState}
+                    originState={originState}
                   />
                   <div />
                 </div>

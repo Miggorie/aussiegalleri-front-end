@@ -4,21 +4,26 @@ import { Dog, Filters } from "../../components/Interfaces";
 
 interface DogListProps {
   searchTerm: string;
-  checkboxStatus: { [key: string]: boolean };
+  genderState: any;
+  colorState: any;
+  originState: any;
 }
 
-function DogList({ searchTerm, checkboxStatus }: DogListProps) {
+function DogList(
+  { searchTerm }: DogListProps,
+  { genderState, colorState, originState }: DogListProps
+) {
   const { dogs } = useDogContext();
   let searchDogs = dogs;
   // const filteredDogs = filterDogs(checkboxStatus);
 
-  const areAllTrue = Object.values(checkboxStatus).every(
-    (value) => value === true
-  );
+  // const areAllTrue = Object.values(checkboxStatus).every(
+  //   (value) => value === true
+  // );
 
-  if (areAllTrue) {
-    console.log(checkboxStatus);
-  }
+  // if (areAllTrue) {
+  //   console.log(checkboxStatus);
+  // }
 
   // Filter dogs by search term
   if (searchTerm && searchTerm !== "") {
