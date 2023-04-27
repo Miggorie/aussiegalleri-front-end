@@ -17,15 +17,18 @@ function DogList({
   const { dogs } = useDogContext();
   let searchDogs = dogs;
 
-  console.log(genderState);
+  //Filtrering på kön
 
-  // const areAllTrue = Object.values(genderState).every(
-  //   (value) => value === true
-  // );
-
-  // if (areAllTrue) {
-  //   console.log(genderState);
-  // }
+  if (genderState[0] && genderState[1]) {
+    searchDogs = dogs;
+  } else {
+    if (genderState[0]) {
+      searchDogs = searchDogs.filter((dog) => dog.isBitch === "1");
+    }
+    if (genderState[1]) {
+      searchDogs = searchDogs.filter((dog) => dog.isBitch === "0");
+    }
+  }
 
   // Filter dogs by search term
   if (searchTerm && searchTerm !== "") {
