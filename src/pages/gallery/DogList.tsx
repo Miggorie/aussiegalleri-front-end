@@ -8,10 +8,12 @@ interface DogListProps {
   originState: any;
 }
 
-function DogList(
-  { searchTerm }: DogListProps,
-  { genderState, colorState, originState }: DogListProps
-) {
+function DogList({
+  searchTerm,
+  genderState,
+  colorState,
+  originState,
+}: DogListProps) {
   const { dogs } = useDogContext();
   let searchDogs = dogs;
 

@@ -19,14 +19,14 @@ import { Checkbox } from "./filtercomponents/Checkbox";
 const renderListItems = (
   options: { label: string }[],
   state: boolean[],
-  onChange: (position: number) => void
+  onChange: (position: number, label: string) => void
 ) =>
   options.map(({ label }, index) => (
     <li key={index}>
       <Checkbox
         label={label}
         state={state[index]}
-        onChange={() => onChange(index)}
+        onChange={() => onChange(index, label)}
       />
     </li>
   ));
@@ -45,7 +45,7 @@ function DogPage() {
     new Array(originOptions.length).fill(false)
   );
 
-  const handleGenderChange = (position: number) => {
+  const handleGenderChange = (position: number, label: string) => {
     const updatedGenderState = genderState.map((item, index) =>
       index === position ? !item : item
     );
