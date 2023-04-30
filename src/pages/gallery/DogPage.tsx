@@ -1,12 +1,4 @@
-import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  FunnelIcon,
-  MinusIcon,
-  PlusIcon,
-} from "@heroicons/react/20/solid";
+import { useState } from "react";
 import SearchBar from "./SearchBar";
 import DogList from "./DogList";
 import {
@@ -34,12 +26,12 @@ const renderListItems = (
   ));
 
 function DogPage() {
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [genderIsOpen, setGenderIsOpen] = useState(false);
   const [ageIsOpen, setAgeIsOpen] = useState(false);
   const [colorIsOpen, setColorIsOpen] = useState(false);
   const [originIsOpen, setOriginIsOpen] = useState(false);
+  const [ipadFilterIsOpen, setIpadFilterIsOpen] = useState(false);
 
   const [ageState, setAgeState] = useState(
     new Array(genderOptions.length).fill(false)
@@ -102,7 +94,160 @@ function DogPage() {
                   onChange={(filterTerm) => setSearchTerm(filterTerm)}
                 />
               </div>
+              <div>
+                <button
+                  className="mobile-filter"
+                  aria-expanded={ipadFilterIsOpen}
+                  onClick={() => setIpadFilterIsOpen(!ipadFilterIsOpen)}
+                >
+                  Filtrera
+                </button>
+              </div>
             </div>
+            <section
+              className={
+                ipadFilterIsOpen
+                  ? "filter-ipad-container"
+                  : "filter-ipad-container-hidden"
+              }
+            >
+              <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+                <div className="filter-ipad-container">
+                  <h2 className="h2">Filtrera</h2>
+                  <div className="m-btm m-top">
+                    <a href="http://localhost:8888/dogs">Alla hundar</a>
+                  </div>
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend className="button-container">
+                        <button
+                          className="accordion-button"
+                          aria-expanded={genderIsOpen}
+                          onClick={() => setGenderIsOpen(!genderIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Kön</h3>
+                          <span
+                            className={
+                              genderIsOpen ? "button-up" : "button-down"
+                            }
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          genderIsOpen
+                            ? "checkbox-list"
+                            : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(
+                          genderOptions,
+                          genderState,
+                          handleGenderChange
+                        )}
+                      </ul>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend>
+                        <button
+                          className="accordion-button"
+                          aria-expanded={ageIsOpen}
+                          onClick={() => setAgeIsOpen(!ageIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Ålder</h3>
+                          <span
+                            className={ageIsOpen ? "button-up" : "button-down"}
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          ageIsOpen ? "checkbox-list" : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(ageOptions, ageState, handleAgeChange)}
+                      </ul>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend>
+                        <button
+                          className="accordion-button"
+                          aria-expanded={colorIsOpen}
+                          onClick={() => setColorIsOpen(!colorIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Färg</h3>
+                          <span
+                            className={
+                              colorIsOpen ? "button-up" : "button-down"
+                            }
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          colorIsOpen ? "checkbox-list" : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(
+                          colorOptions,
+                          colorState,
+                          handleColorChange
+                        )}
+                      </ul>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend>
+                        <button
+                          className="accordion-button"
+                          aria-expanded={originIsOpen}
+                          onClick={() => setOriginIsOpen(!originIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Ursprung</h3>
+                          <span
+                            className={
+                              originIsOpen ? "button-up" : "button-down"
+                            }
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          originIsOpen
+                            ? "checkbox-list"
+                            : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(
+                          originOptions,
+                          originState,
+                          handleOriginChange
+                        )}
+                      </ul>
+                    </div>
+                  </fieldset>
+                  <div>
+                    <button
+                      className="clear-filter m-top m-btm"
+                      onClick={clearAllFilters}
+                    >
+                      Rensa filter
+                    </button>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-3">
+                  <div />
+                </div>
+              </div>
+            </section>
             <section aria-labelledby="products-heading" className="pt-6 pb-24">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                 <div className="filter-sidebar-container">
@@ -235,6 +380,7 @@ function DogPage() {
                     </button>
                   </div>
                 </div>
+
                 <div className="lg:col-span-3">
                   <DogList
                     searchTerm={searchTerm}

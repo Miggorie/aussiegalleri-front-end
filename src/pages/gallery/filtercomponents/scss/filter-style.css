@@ -9,6 +9,11 @@
 .filter-sidebar-container {
   max-width: 20rem;
 }
+@media (max-width: 1023px) {
+  .filter-sidebar-container {
+    display: none;
+  }
+}
 
 .h2 {
   font-size: 1.5rem;
@@ -106,4 +111,33 @@
   background-color: #dbd1c7;
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
+}
+
+.mobile-filter {
+  display: none;
+  padding: 1rem;
+}
+@media (max-width: 1023px) {
+  .mobile-filter {
+    display: block;
+  }
+}
+
+.filter-ipad-container {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear, opacity 0.2s linear;
+}
+@media (min-width: 1024px) {
+  .filter-ipad-container .filter-ipad-container {
+    display: none;
+  }
+}
+
+.filter-ipad-container-hidden {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.2s, opacity 0.2s linear;
 }/*# sourceMappingURL=filter-style.css.map */
