@@ -1,3 +1,5 @@
+import "./CheckboxStyle.css";
+
 type CheckboxProps = {
   label: string;
   state: boolean;
@@ -5,9 +7,10 @@ type CheckboxProps = {
 };
 
 export const Checkbox = ({ label, state, onChange }: CheckboxProps) => (
-  <div className="toppings-list-item">
-    <div className="left-section">
+  <div className="checkbox-item">
+    <div className="checkbox-container">
       <input
+        className="checkbox-input"
         type="checkbox"
         id={`custom-checkbox-${label}`}
         name={label}
@@ -15,7 +18,9 @@ export const Checkbox = ({ label, state, onChange }: CheckboxProps) => (
         checked={state}
         onChange={onChange}
       />
-      <label htmlFor={`custom-checkbox-${label}`}>{label}</label>
+      <label className="checkbox-label" htmlFor={`custom-checkbox-${label}`}>
+        {label}
+      </label>
     </div>
   </div>
 );

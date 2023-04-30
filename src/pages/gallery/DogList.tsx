@@ -1,11 +1,14 @@
 import useDogContext from "../../hooks/use-dog-context";
 import { Dog } from "../../components/Interfaces";
+import { originIds, colorIds } from "./filtercomponents/FilterID";
+const { intersection } = require("lodash");
 
 interface DogListProps {
   searchTerm: string;
   genderState: any;
   colorState: any;
   originState: any;
+  ageState: any;
 }
 
 function DogList({
@@ -13,28 +16,82 @@ function DogList({
   genderState,
   colorState,
   originState,
+  ageState,
 }: DogListProps) {
   const { dogs } = useDogContext();
+
   let searchDogs = dogs;
 
   //Filtrering på kön
 
-  if (genderState[0] && genderState[1]) {
-    searchDogs = dogs;
-  } else {
-    if (genderState[0]) {
-      searchDogs = searchDogs.filter((dog) => dog.isBitch === "1");
-    }
-    if (genderState[1]) {
-      searchDogs = searchDogs.filter((dog) => dog.isBitch === "0");
-    }
+  let genderFilteredDogs = dogs;
+  if (genderState[1] && genderState[0]) {
+    genderFilteredDogs = dogs;
+  } else if (genderState[1]) {
+    genderFilteredDogs = genderFilteredDogs.filter(
+      (dog) => dog.isBitch === "1"
+    );
+  } else if (genderState[0]) {
+    genderFilteredDogs = genderFilteredDogs.filter(
+      (dog) => dog.isBitch === "0"
+    );
   }
+
+  let ageFilteredDogs = dogs;
+  if (ageState[1] && ageState[0]) {
+    ageFilteredDogs = dogs;
+  } else if (ageState[1]) {
+    ageFilteredDogs = ageFilteredDogs.filter((dog) => dog.isPuppy === "0");
+  } else if (ageState[0]) {
+    ageFilteredDogs = ageFilteredDogs.filter((dog) => dog.isPuppy === "1");
+  }
+
+  let colorFilteredDogs = dogs;
+  if (colorState.some((state: any) => state)) {
+    colorFilteredDogs = colorFilteredDogs.filter((dog) => {
+      return colorState.some((state: any, index: number) => {
+        if (state && dog.colorID === colorIds[index]) {
+          return true;
+        }
+      });
+    });
+  }
+
+  let originFilteredDogs = dogs;
+  if (originState.some((state: any) => state)) {
+    originFilteredDogs = originFilteredDogs.filter((dog) => {
+      return originState.some((state: any, index: number) => {
+        if (state && dog.originID === originIds[index]) {
+          return true;
+        }
+      });
+    });
+  }
+
+  searchDogs = intersection(
+    originFilteredDogs,
+    genderFilteredDogs,
+    colorFilteredDogs,
+    ageFilteredDogs
+  );
 
   // Filter dogs by search term
   if (searchTerm && searchTerm !== "") {
-    searchDogs = searchDogs.filter((dog) =>
-      dog.name?.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // Parse search term as HTML and extract plain text content
+    const parser = new DOMParser();
+    const parsedSearchTerm = parser
+      .parseFromString(searchTerm, "text/html")
+      .body.textContent?.toLowerCase();
+
+    searchDogs = searchDogs.filter((dog) => {
+      const name = dog.name?.toLowerCase();
+      for (let i = 0; i < (parsedSearchTerm?.length || 0); i++) {
+        if (name?.charAt(i) !== parsedSearchTerm?.charAt(i)?.toLowerCase()) {
+          return false;
+        }
+      }
+      return true;
+    });
   }
 
   const baseUrl = "http://aussiegalleri.se/images/thumbnails/";

@@ -1,0 +1,18 @@
+.checkboxlabel {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+}
+
+.checkbox-input {
+  border-radius: 0.1rem;
+  margin-right: 0.5rem;
+  padding: 0.7rem;
+}
+
+.checkbox-container {
+  margin-top: 0.5rem;
+}
+
+.checkbox-item {
+  margin-left: 0.3rem;
+}/*# sourceMappingURL=CheckboxStyle.css.map */

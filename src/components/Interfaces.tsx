@@ -11,6 +11,9 @@ export interface Dog {
   place?: string;
   gender?: string;
   regnr?: string;
+  colorID?: string;
+  originID?: string;
+  isPuppy?: string;
 }
 
 export interface Litter {

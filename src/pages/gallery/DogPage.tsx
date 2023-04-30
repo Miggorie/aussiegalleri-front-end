@@ -13,8 +13,10 @@ import {
   genderOptions,
   colorOptions,
   originOptions,
+  ageOptions,
 } from "./filtercomponents/FilterOptions";
-import { Checkbox } from "./filtercomponents/Checkbox";
+import { Checkbox } from "./filtercomponents/checkbox/Checkbox";
+import "./filtercomponents/scss/filter-style.css";
 
 const renderListItems = (
   options: { label: string }[],
@@ -34,6 +36,14 @@ const renderListItems = (
 function DogPage() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [genderIsOpen, setGenderIsOpen] = useState(false);
+  const [ageIsOpen, setAgeIsOpen] = useState(false);
+  const [colorIsOpen, setColorIsOpen] = useState(false);
+  const [originIsOpen, setOriginIsOpen] = useState(false);
+
+  const [ageState, setAgeState] = useState(
+    new Array(genderOptions.length).fill(false)
+  );
 
   const [genderState, setGenderState] = useState(
     new Array(genderOptions.length).fill(false)
@@ -45,7 +55,14 @@ function DogPage() {
     new Array(originOptions.length).fill(false)
   );
 
-  const handleGenderChange = (position: number, label: string) => {
+  const handleAgeChange = (position: number) => {
+    const updatedAgeState = ageState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setAgeState(updatedAgeState);
+  };
+
+  const handleGenderChange = (position: number) => {
     const updatedGenderState = genderState.map((item, index) =>
       index === position ? !item : item
     );
@@ -66,59 +83,17 @@ function DogPage() {
     setOriginState(updatedOriginState);
   };
 
+  const clearAllFilters = () => {
+    setGenderState(new Array(genderOptions.length).fill(false));
+    setAgeState(new Array(ageOptions.length).fill(false));
+    setColorState(new Array(colorOptions.length).fill(false));
+    setOriginState(new Array(originOptions.length).fill(false));
+  };
+
   return (
     <div>
       <div className="bg-white">
         <div>
-          {/* Mobile filter dialog */}
-          <Transition.Root show={mobileFiltersOpen} as={Fragment}>
-            <Dialog
-              as="div"
-              className="relative z-40 lg:hidden"
-              onClose={setMobileFiltersOpen}
-            >
-              <Transition.Child
-                as={Fragment}
-                enter="transition-opacity ease-linear duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="transition-opacity ease-linear duration-300"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="fixed inset-0 bg-black bg-opacity-25" />
-              </Transition.Child>
-
-              <div className="fixed inset-0 z-40 flex">
-                <Transition.Child
-                  as={Fragment}
-                  enter="transition ease-in-out duration-300 transform"
-                  enterFrom="translate-x-full"
-                  enterTo="translate-x-0"
-                  leave="transition ease-in-out duration-300 transform"
-                  leaveFrom="translate-x-0"
-                  leaveTo="translate-x-full"
-                >
-                  <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
-                    <div className="flex items-center justify-between px-4">
-                      <h2 className="text-lg font-medium text-gray-900">
-                        Filters
-                      </h2>
-                      <button
-                        type="button"
-                        className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
-                        onClick={() => setMobileFiltersOpen(false)}
-                      >
-                        <span className="sr-only">Stäng menyn</span>
-                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </Dialog>
-          </Transition.Root>
-
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-baseline border-b border-stone-200 pt-14 pb-8">
               <h1 className="text-2xl font-semibold">Aussiegalleriet</h1>
@@ -127,51 +102,138 @@ function DogPage() {
                   onChange={(filterTerm) => setSearchTerm(filterTerm)}
                 />
               </div>
-              <div className="flex items-center">
-                <button
-                  type="button"
-                  className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
-                ></button>
-                <button
-                  type="button"
-                  className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-                  onClick={() => setMobileFiltersOpen(true)}
-                >
-                  <span className="sr-only">Filtrera</span>
-                  <FunnelIcon
-                    className="h-5 w-5 text-stone-500"
-                    aria-hidden="true"
-                  />
-                </button>
-              </div>
             </div>
             <section aria-labelledby="products-heading" className="pt-6 pb-24">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                <div className="App">
-                  <h3>Kön</h3>
-                  <ul className="toppings-list">
-                    {renderListItems(
-                      genderOptions,
-                      genderState,
-                      handleGenderChange
-                    )}
-                  </ul>
-                  <h3>Färg</h3>
-                  <ul className="toppings-list">
-                    {renderListItems(
-                      colorOptions,
-                      colorState,
-                      handleColorChange
-                    )}
-                  </ul>
-                  <h3>Ursprung</h3>
-                  <ul className="toppings-list">
-                    {renderListItems(
-                      originOptions,
-                      originState,
-                      handleOriginChange
-                    )}
-                  </ul>
+                <div className="filter-sidebar-container">
+                  <h2 className="h2">Filtrera</h2>
+                  <div className="m-btm m-top">
+                    <a href="http://localhost:8888/dogs">Alla hundar</a>
+                  </div>
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend className="button-container">
+                        <button
+                          className="accordion-button"
+                          aria-expanded={genderIsOpen}
+                          onClick={() => setGenderIsOpen(!genderIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Kön</h3>
+                          <span
+                            className={
+                              genderIsOpen ? "button-up" : "button-down"
+                            }
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          genderIsOpen
+                            ? "checkbox-list"
+                            : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(
+                          genderOptions,
+                          genderState,
+                          handleGenderChange
+                        )}
+                      </ul>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend>
+                        <button
+                          className="accordion-button"
+                          aria-expanded={ageIsOpen}
+                          onClick={() => setAgeIsOpen(!ageIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Ålder</h3>
+                          <span
+                            className={ageIsOpen ? "button-up" : "button-down"}
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          ageIsOpen ? "checkbox-list" : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(ageOptions, ageState, handleAgeChange)}
+                      </ul>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend>
+                        <button
+                          className="accordion-button"
+                          aria-expanded={colorIsOpen}
+                          onClick={() => setColorIsOpen(!colorIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Färg</h3>
+                          <span
+                            className={
+                              colorIsOpen ? "button-up" : "button-down"
+                            }
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          colorIsOpen ? "checkbox-list" : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(
+                          colorOptions,
+                          colorState,
+                          handleColorChange
+                        )}
+                      </ul>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <div className="filter-all-container">
+                      <legend>
+                        <button
+                          className="accordion-button"
+                          aria-expanded={originIsOpen}
+                          onClick={() => setOriginIsOpen(!originIsOpen)}
+                        >
+                          <h3 className="filter-list-heading">Ursprung</h3>
+                          <span
+                            className={
+                              originIsOpen ? "button-up" : "button-down"
+                            }
+                          ></span>
+                        </button>
+                      </legend>
+                      <ul
+                        className={
+                          originIsOpen
+                            ? "checkbox-list"
+                            : "checkbox-list-hidden"
+                        }
+                      >
+                        {renderListItems(
+                          originOptions,
+                          originState,
+                          handleOriginChange
+                        )}
+                      </ul>
+                    </div>
+                  </fieldset>
+                  <div>
+                    <button
+                      className="clear-filter m-top m-btm"
+                      onClick={clearAllFilters}
+                    >
+                      Rensa filter
+                    </button>
+                  </div>
                 </div>
                 <div className="lg:col-span-3">
                   <DogList
@@ -179,6 +241,7 @@ function DogPage() {
                     genderState={genderState}
                     colorState={colorState}
                     originState={originState}
+                    ageState={ageState}
                   />
                   <div />
                 </div>
