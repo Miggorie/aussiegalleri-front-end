@@ -1,3 +1,20 @@
+.checkboxlabel {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.checkbox-input {
+  border-radius: 0.1rem;
+  margin-right: 0.5rem;
+  padding: 0.7rem;
+}
+
+.checkbox-container {
+  margin-top: 0.5rem;
+}
+
+.checkbox-item {
+  margin-left: 0.3rem;
+} 
 .m-top {
   margin-top: 2rem;
 }
@@ -48,7 +65,11 @@
 }
 
 .filter-subcategory {
-  line-height: 2rem;
+  width: 20rem;
+}
+
+.filter-all-container {
+  width: 100%;
 }
 
 .accordion-button {
@@ -108,7 +129,7 @@
 }
 
 .clear-filter {
-  background-color: #dbd1c7;
+  background-color: #c9c3bb;
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
 }
@@ -140,4 +161,4 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.2s, opacity 0.2s linear;
-}/*# sourceMappingURL=filter-style.css.map */
+}/*# sourceMappingURL=main.css.map */

@@ -7,8 +7,8 @@ import {
   originOptions,
   ageOptions,
 } from "./filtercomponents/FilterOptions";
-import { Checkbox } from "./filtercomponents/checkbox/Checkbox";
-import "./filtercomponents/scss/filter-style.css";
+import { Checkbox } from "../../components/Checkbox";
+import "../../stylesheets/main.css";
 
 const renderListItems = (
   options: { label: string }[],
@@ -242,6 +242,8 @@ function DogPage() {
                     </button>
                   </div>
                 </div>
+
+                {/* Datorfiltrering */}
 
                 <div className="lg:col-span-3">
                   <div />

@@ -1,4 +1,4 @@
-import "./CheckboxStyle.css";
+import "../stylesheets/main.css";
 
 type CheckboxProps = {
   label: string;

@@ -1,53 +1,4 @@
-$breakpoints: (
-  sm: 450px,
-  md: 680px,
-  lg: 900px,
-  xl: 1023px,
-);
-
-@mixin respond-to-max($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "Invalid breakpoint name: #{$breakpoint}.";
-  }
-}
-
-$breakpoints: (
-  sm: 450px,
-  md: 680px,
-  lg: 900px,
-  xl: 1023px,
-);
-
-@mixin respond-to-min($breakpoint) {
-  @if map-has-key($breakpoint-mins, $breakpoint) {
-    @media (min-width: map-get($breakpoint, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "Invalid breakpoint name: #{$breakpoint}.";
-  }
-}
-
-@mixin accordion-button {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  overflow: hidden;
-
-  &.accordion-content-visible {
-    visibility: visible;
-    opacity: 1;
-    overflow: hidden;
-  }
-}
-
-@mixin sub-color {
-  background-color: #dbd1c7;
-}
+@use "../abstracts" as *;
 
 .m-top {
   margin-top: 2rem;
@@ -57,10 +8,6 @@ $breakpoints: (
   margin-bottom: 2rem;
 }
 
-@mixin heading-h2 {
-  font-size: 1.5rem;
-}
-
 .filter-sidebar-container {
   max-width: 20rem;
   @include respond-to-max(xl) {
@@ -68,7 +15,7 @@ $breakpoints: (
   }
 }
 .h2 {
-  @include heading-h2();
+  font-size: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -101,7 +48,11 @@ $breakpoints: (
 }
 
 .filter-subcategory {
-  line-height: 2rem;
+  width: 20rem;
+}
+
+.filter-all-container {
+  width: 100%;
 }
 
 .accordion-button {
@@ -160,7 +111,7 @@ $breakpoints: (
 }
 
 .clear-filter {
-  @include sub-color();
+  background-color: $btn-color;
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
 }
