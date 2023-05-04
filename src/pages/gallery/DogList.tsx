@@ -1,6 +1,6 @@
 import useDogContext from "../../hooks/use-dog-context";
 import { Dog } from "../../interfaces/Interfaces";
-import { originIds, colorIds } from "./filtercomponents/FilterID";
+import { originIds, colorIds } from "./components/FilterID";
 const { intersection } = require("lodash");
 
 interface DogListProps {

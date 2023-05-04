@@ -45,14 +45,14 @@ function Home() {
                     <div className="relative h-full w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-full sm:aspect-h-full sm:h-full lg:aspect-w-full lg:aspect-h-1">
                       <img
                         src={baseUrl + dog.date + "/" + dog.standLeft}
-                        alt="hund"
+                        alt=""
                         className="h-full w-full object-cover object-center"
                       />
                     </div>
-                    <h3 className="mt-6 text-sm text-gray-500">
+                    <p className="mt-6 text-sm text-gray-500">
                       <span className="absolute inset-0" />
                       Fotad: {dog.date}
-                    </h3>
+                    </p>
                     <p className="text-base font-semibold text-gray-900">
                       {dog.name}
                     </p>

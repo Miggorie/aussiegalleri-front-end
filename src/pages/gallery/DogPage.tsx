@@ -1,13 +1,13 @@
 import { useState } from "react";
-import SearchBar from "./filtercomponents/SearchBar";
+import SearchBar from "./components/SearchBar";
 import DogList from "./DogList";
 import {
   genderOptions,
   colorOptions,
   originOptions,
   ageOptions,
-} from "./filtercomponents/FilterOptions";
-import { Checkbox } from "./filtercomponents/Checkbox";
+} from "./components/FilterOptions";
+import { Checkbox } from "./components/Checkbox";
 import "../../stylesheets/main.css";
 
 const renderListItems = (

@@ -40,12 +40,12 @@ const AllDogStatistics = () => {
             </svg>
           </div>
           {dogcount?.map((dogcount: CountDogs) => (
-            <h3 className="text-4xl font-extrabold sm:text-5xl xl:text-6xl">
+            <h2 className="text-4xl font-extrabold sm:text-5xl xl:text-6xl">
               {dogcount.total_dogs}
               <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
                 Aussies i galleriet
               </p>
-            </h3>
+            </h2>
           ))}
         </div>
         <div className="lg:w-1/2">
