@@ -104,276 +104,153 @@ function DogPage() {
                 </button>
               </div>
             </div>
-            <section
-              className={
-                ipadFilterIsOpen
-                  ? "filter-ipad-container"
-                  : "filter-ipad-container-hidden"
-              }
-            >
-              <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                <div className="filter-ipad-container">
-                  <h2 className="h2">Filtrera</h2>
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend className="button-container">
-                        <button
-                          className="accordion-button"
-                          aria-expanded={genderIsOpen}
-                          onClick={() => setGenderIsOpen(!genderIsOpen)}
-                        >
-                          <h3 className="filter-list-heading">Kön</h3>
-                          <span
-                            className={
-                              genderIsOpen ? "button-up" : "button-down"
-                            }
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          genderIsOpen
-                            ? "checkbox-list"
-                            : "checkbox-list-hidden"
-                        }
-                      >
-                        {renderListItems(
-                          genderOptions,
-                          genderState,
-                          handleGenderChange
-                        )}
-                      </ul>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend>
-                        <button
-                          className="accordion-button"
-                          aria-expanded={ageIsOpen}
-                          onClick={() => setAgeIsOpen(!ageIsOpen)}
-                        >
-                          <h3 className="filter-list-heading">Ålder</h3>
-                          <span
-                            className={ageIsOpen ? "button-up" : "button-down"}
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          ageIsOpen ? "checkbox-list" : "checkbox-list-hidden"
-                        }
-                      >
-                        {renderListItems(ageOptions, ageState, handleAgeChange)}
-                      </ul>
-                    </div>
-                  </fieldset>
-
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend>
-                        <button
-                          className="accordion-button"
-                          aria-expanded={colorIsOpen}
-                          onClick={() => setColorIsOpen(!colorIsOpen)}
-                        >
-                          <h3 className="filter-list-heading">Färg</h3>
-                          <span
-                            className={
-                              colorIsOpen ? "button-up" : "button-down"
-                            }
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          colorIsOpen ? "checkbox-list" : "checkbox-list-hidden"
-                        }
-                      >
-                        {renderListItems(
-                          colorOptions,
-                          colorState,
-                          handleColorChange
-                        )}
-                      </ul>
-                    </div>
-                  </fieldset>
-
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend>
-                        <button
-                          className="accordion-button"
-                          aria-expanded={originIsOpen}
-                          onClick={() => setOriginIsOpen(!originIsOpen)}
-                        >
-                          <h3 className="filter-list-heading">Ursprung</h3>
-                          <span
-                            className={
-                              originIsOpen ? "button-up" : "button-down"
-                            }
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          originIsOpen
-                            ? "checkbox-list"
-                            : "checkbox-list-hidden"
-                        }
-                      >
-                        {renderListItems(
-                          originOptions,
-                          originState,
-                          handleOriginChange
-                        )}
-                      </ul>
-                    </div>
-                  </fieldset>
-                  <div>
-                    <button
-                      className="clear-filter m-top m-btm"
-                      onClick={clearAllFilters}
-                    >
-                      Rensa filter
-                    </button>
-                  </div>
-                </div>
-                <div />
-              </div>
-            </section>
 
             {/* Datorfiltrering */}
             <section className="pt-6 pb-24">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                <div className="filter-sidebar-container">
-                  <h2 className="h2">Filtrera</h2>
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend className="button-container">
-                        <button
-                          className="accordion-button"
-                          aria-expanded={genderIsOpen}
-                          onClick={() => setGenderIsOpen(!genderIsOpen)}
+                <div
+                  className={
+                    ipadFilterIsOpen
+                      ? "filter-ipad-container"
+                      : "filter-ipad-container-hidden filter-sidebar-container"
+                  }
+                >
+                  {" "}
+                  <div className="">
+                    <fieldset>
+                      <div className="filter-all-container">
+                        <legend className="button-container">
+                          <button
+                            className="accordion-button"
+                            aria-expanded={genderIsOpen}
+                            onClick={() => setGenderIsOpen(!genderIsOpen)}
+                          >
+                            <h3 className="filter-list-heading">Kön</h3>
+                            <span
+                              className={
+                                genderIsOpen ? "button-up" : "button-down"
+                              }
+                            ></span>
+                          </button>
+                        </legend>
+                        <ul
+                          className={
+                            genderIsOpen
+                              ? "checkbox-list"
+                              : "checkbox-list-hidden"
+                          }
                         >
-                          <h3 className="filter-list-heading">Kön</h3>
-                          <span
-                            className={
-                              genderIsOpen ? "button-up" : "button-down"
-                            }
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          genderIsOpen
-                            ? "checkbox-list"
-                            : "checkbox-list-hidden"
-                        }
-                      >
-                        {renderListItems(
-                          genderOptions,
-                          genderState,
-                          handleGenderChange
-                        )}
-                      </ul>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend>
-                        <button
-                          className="accordion-button"
-                          aria-expanded={ageIsOpen}
-                          onClick={() => setAgeIsOpen(!ageIsOpen)}
+                          {renderListItems(
+                            genderOptions,
+                            genderState,
+                            handleGenderChange
+                          )}
+                        </ul>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div className="filter-all-container">
+                        <legend>
+                          <button
+                            className="accordion-button"
+                            aria-expanded={ageIsOpen}
+                            onClick={() => setAgeIsOpen(!ageIsOpen)}
+                          >
+                            <h3 className="filter-list-heading">Ålder</h3>
+                            <span
+                              className={
+                                ageIsOpen ? "button-up" : "button-down"
+                              }
+                            ></span>
+                          </button>
+                        </legend>
+                        <ul
+                          className={
+                            ageIsOpen ? "checkbox-list" : "checkbox-list-hidden"
+                          }
                         >
-                          <h3 className="filter-list-heading">Ålder</h3>
-                          <span
-                            className={ageIsOpen ? "button-up" : "button-down"}
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          ageIsOpen ? "checkbox-list" : "checkbox-list-hidden"
-                        }
-                      >
-                        {renderListItems(ageOptions, ageState, handleAgeChange)}
-                      </ul>
-                    </div>
-                  </fieldset>
+                          {renderListItems(
+                            ageOptions,
+                            ageState,
+                            handleAgeChange
+                          )}
+                        </ul>
+                      </div>
+                    </fieldset>
 
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend>
-                        <button
-                          className="accordion-button"
-                          aria-expanded={colorIsOpen}
-                          onClick={() => setColorIsOpen(!colorIsOpen)}
+                    <fieldset>
+                      <div className="filter-all-container">
+                        <legend>
+                          <button
+                            className="accordion-button"
+                            aria-expanded={colorIsOpen}
+                            onClick={() => setColorIsOpen(!colorIsOpen)}
+                          >
+                            <h3 className="filter-list-heading">Färg</h3>
+                            <span
+                              className={
+                                colorIsOpen ? "button-up" : "button-down"
+                              }
+                            ></span>
+                          </button>
+                        </legend>
+                        <ul
+                          className={
+                            colorIsOpen
+                              ? "checkbox-list"
+                              : "checkbox-list-hidden"
+                          }
                         >
-                          <h3 className="filter-list-heading">Färg</h3>
-                          <span
-                            className={
-                              colorIsOpen ? "button-up" : "button-down"
-                            }
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          colorIsOpen ? "checkbox-list" : "checkbox-list-hidden"
-                        }
-                      >
-                        {renderListItems(
-                          colorOptions,
-                          colorState,
-                          handleColorChange
-                        )}
-                      </ul>
-                    </div>
-                  </fieldset>
+                          {renderListItems(
+                            colorOptions,
+                            colorState,
+                            handleColorChange
+                          )}
+                        </ul>
+                      </div>
+                    </fieldset>
 
-                  <fieldset>
-                    <div className="filter-all-container">
-                      <legend>
-                        <button
-                          className="accordion-button"
-                          aria-expanded={originIsOpen}
-                          onClick={() => setOriginIsOpen(!originIsOpen)}
+                    <fieldset>
+                      <div className="filter-all-container">
+                        <legend>
+                          <button
+                            className="accordion-button"
+                            aria-expanded={originIsOpen}
+                            onClick={() => setOriginIsOpen(!originIsOpen)}
+                          >
+                            <h3 className="filter-list-heading">Ursprung</h3>
+                            <span
+                              className={
+                                originIsOpen ? "button-up" : "button-down"
+                              }
+                            ></span>
+                          </button>
+                        </legend>
+                        <ul
+                          className={
+                            originIsOpen
+                              ? "checkbox-list"
+                              : "checkbox-list-hidden"
+                          }
                         >
-                          <h3 className="filter-list-heading">Ursprung</h3>
-                          <span
-                            className={
-                              originIsOpen ? "button-up" : "button-down"
-                            }
-                          ></span>
-                        </button>
-                      </legend>
-                      <ul
-                        className={
-                          originIsOpen
-                            ? "checkbox-list"
-                            : "checkbox-list-hidden"
-                        }
+                          {renderListItems(
+                            originOptions,
+                            originState,
+                            handleOriginChange
+                          )}
+                        </ul>
+                      </div>
+                    </fieldset>
+                    <div>
+                      <button
+                        className="clear-filter m-top m-btm"
+                        onClick={clearAllFilters}
                       >
-                        {renderListItems(
-                          originOptions,
-                          originState,
-                          handleOriginChange
-                        )}
-                      </ul>
+                        Rensa filter
+                      </button>
                     </div>
-                  </fieldset>
-                  <div>
-                    <button
-                      className="clear-filter m-top m-btm"
-                      onClick={clearAllFilters}
-                    >
-                      Rensa filter
-                    </button>
                   </div>
                 </div>
-
                 <div className="lg:col-span-3">
                   <DogList
                     searchTerm={searchTerm}
