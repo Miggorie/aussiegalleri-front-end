@@ -5,7 +5,6 @@ export default function HomeComponent() {
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div className="bg-white pt-14 pb-14 p-8 rounded-full">
-              <div className="hidden sm:mb-8 sm:flex sm:justify-center"></div>
               <div>
                 <h1 className="text-4xl font-bold tracking-tight text-center sm:text-6xl">
                   Aussiegalleriet
