@@ -1,5 +1,5 @@
 import React from "react";
-import { Litter } from "../Interfaces";
+import { Litter } from "../../../../interfaces/Interfaces";
 
 function ParentInfoCard(parents: Litter) {
   return (

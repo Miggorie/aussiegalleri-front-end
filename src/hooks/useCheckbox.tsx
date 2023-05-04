@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Filters } from "../components/Interfaces";
+import { Filters } from "../interfaces/Interfaces";
 
 export default function useCheckbox(filterValues: Filters[]) {
   const [checkboxStatus, setCheckboxStatus] = useState(filterValues);

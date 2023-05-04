@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GoChevronDown, GoChevronLeft } from "react-icons/go";
-import { FaqItem } from "../../components/Interfaces";
+import { FaqItem } from "../../interfaces/Interfaces";
 
 function Accordion({ items }: { items: FaqItem[] }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);

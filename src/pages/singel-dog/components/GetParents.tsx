@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Dog } from "./Interfaces";
+import { Dog } from "../../../interfaces/Interfaces";
 
 interface Props {
   currentDog: Dog;
@@ -33,32 +33,28 @@ const GetParents: React.FC<Props> = ({ currentDog }) => {
     <div>
       {parents && parents.length > 0 ? (
         <>
-          <h2 className="inline-block mt-10 px-3 py-px text-m font-semibold tracking-wider text-stone-900 uppercase rounded-full bg-teal-accent-400">
-            Föräldrar
-          </h2>
-          <div className="bg-white">
-            <h2 className="sr-only">Hundar</h2>
-            <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-4">
-              {parents?.map((parents: Dog) => (
+          <h3 className="dog-list-title">Föräldrar</h3>
+          <ul className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-4">
+            {parents?.map((parents: Dog) => (
+              <li>
+                {" "}
                 <a
                   key={parents.dogID}
                   href={`/dogs/${parents.url}`}
                   className="group"
                 >
-                  <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
+                  <div className="aspect-ratio: auto w-full overflow-hidden m-round">
                     <img
                       src={baseUrl + parents.date + "/" + parents.standLeft}
-                      alt="hund"
+                      alt=""
                       className="h-full w-full object-cover object-center group-hover:opacity-75"
                     />
                   </div>
-                  <h3 className="mt-4 mb-10 text-s text-gray-700">
-                    {parents.name}
-                  </h3>
+                  <p className="dog-name">{parents.name}</p>
                 </a>
-              ))}
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
         </>
       ) : null}
     </div>

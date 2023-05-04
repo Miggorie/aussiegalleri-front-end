@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import Footer from "./components/footercomponent/Footer";
 import Header from "./components/headercomponent/Navbar";
-import SingleDog from "./pages/dog";
+import SingleDog from "./pages/singel-dog/DogSinglePage";
 import About from "./pages/about/About";
 import Faq from "./pages/faq/Faq";
 import Contact from "./pages/contact";

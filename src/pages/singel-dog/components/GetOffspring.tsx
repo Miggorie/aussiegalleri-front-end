@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Dog } from "./Interfaces";
+import { Dog } from "../../../interfaces/Interfaces";
 
 interface Props {
   currentDog: Dog;
@@ -33,11 +33,8 @@ const GetOffspring: React.FC<Props> = ({ currentDog }) => {
     <div>
       {offspring && offspring.length > 0 ? (
         <>
-          <h2 className="inline-block mt-10 px-3 py-px text-m font-semibold tracking-wider text-stone-900 uppercase rounded-full bg-teal-accent-400">
-            Avkommor
-          </h2>
+          <h3 className="dog-list-title">Avkommor</h3>
           <div className="bg-white">
-            <h2 className="sr-only">Hundar</h2>
             <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
               {offspring?.map((offspring: Dog) => (
                 <a
@@ -52,9 +49,7 @@ const GetOffspring: React.FC<Props> = ({ currentDog }) => {
                       className="h-full w-full object-cover object-center group-hover:opacity-75"
                     />
                   </div>
-                  <h3 className="mt-4 mb-10 text-s text-gray-700">
-                    {offspring.name}
-                  </h3>
+                  <p className="dog-name">{offspring.name}</p>
                 </a>
               ))}
             </div>

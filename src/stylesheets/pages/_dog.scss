@@ -1,0 +1,5 @@
+@use "../abstracts" as a;
+
+.m-round {
+  @include a.border-radius-medium;
+}

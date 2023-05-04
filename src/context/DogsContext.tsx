@@ -1,5 +1,5 @@
 import { createContext, useState, useCallback } from "react";
-import { Dog } from "../components/Interfaces";
+import { Dog } from "../interfaces/Interfaces";
 
 export interface DogsContextType {
   dogs: Dog[];

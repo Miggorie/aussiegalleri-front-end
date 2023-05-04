@@ -1,5 +1,3 @@
-import "../stylesheets/main.css";
-
 type CheckboxProps = {
   label: string;
   state: boolean;

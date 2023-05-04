@@ -1,0 +1,15 @@
+@use "../abstracts" as a;
+@use "../base" as b;
+
+.dog-name {
+  @include a.dog-name-list-view;
+}
+
+.dog-list-title {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding-left: 0.75rem;
+}

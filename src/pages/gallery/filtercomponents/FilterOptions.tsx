@@ -2,7 +2,7 @@ import {
   Filters,
   SortOption,
   SubCategories,
-} from "../../../components/Interfaces";
+} from "../../../interfaces/Interfaces";
 
 export const sortOptions: SortOption[] = [
   {

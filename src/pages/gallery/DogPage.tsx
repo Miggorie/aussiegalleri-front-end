@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SearchBar from "./SearchBar";
+import SearchBar from "./filtercomponents/SearchBar";
 import DogList from "./DogList";
 import {
   genderOptions,
@@ -7,7 +7,7 @@ import {
   originOptions,
   ageOptions,
 } from "./filtercomponents/FilterOptions";
-import { Checkbox } from "../../components/Checkbox";
+import { Checkbox } from "./filtercomponents/Checkbox";
 import "../../stylesheets/main.css";
 
 const renderListItems = (
@@ -114,9 +114,6 @@ function DogPage() {
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                 <div className="filter-ipad-container">
                   <h2 className="h2">Filtrera</h2>
-                  <div className="m-btm m-top">
-                    <a href="http://localhost:8888/dogs">Alla hundar</a>
-                  </div>
                   <fieldset>
                     <div className="filter-all-container">
                       <legend className="button-container">
@@ -242,21 +239,15 @@ function DogPage() {
                     </button>
                   </div>
                 </div>
-
-                {/* Datorfiltrering */}
-
-                <div className="lg:col-span-3">
-                  <div />
-                </div>
+                <div />
               </div>
             </section>
-            <section aria-labelledby="products-heading" className="pt-6 pb-24">
+
+            {/* Datorfiltrering */}
+            <section className="pt-6 pb-24">
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                 <div className="filter-sidebar-container">
                   <h2 className="h2">Filtrera</h2>
-                  <div className="m-btm m-top">
-                    <a href="http://localhost:8888/dogs">Alla hundar</a>
-                  </div>
                   <fieldset>
                     <div className="filter-all-container">
                       <legend className="button-container">

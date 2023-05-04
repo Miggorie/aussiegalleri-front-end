@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CountDogs } from "../Interfaces";
+import { CountDogs } from "../../../interfaces/Interfaces";
 import axios from "axios";
 
 const OtherStatistic = () => {

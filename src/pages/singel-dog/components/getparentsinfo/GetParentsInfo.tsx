@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Dog } from "../Interfaces";
-import { Litter } from "../Interfaces";
+import { Dog } from "../../../../interfaces/Interfaces";
+import { Litter } from "../../../../interfaces/Interfaces";
 import ParentInfoCard from "./ParentInfoCard";
 
 interface Props {
