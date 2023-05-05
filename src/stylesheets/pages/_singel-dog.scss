@@ -36,7 +36,7 @@
 .relatives-card {
   background-color: #f5f5f4;
   padding: 5rem;
-  @include a.border-radius-medium;
+  @include a.border-radius-small;
   display: flex;
   text-align: center;
   font-weight: 700;
@@ -54,7 +54,7 @@
 .info-card {
   background-color: #f5f5f4;
   padding: 3rem;
-  @include a.border-radius-medium;
+  @include a.border-radius-small;
   display: flex;
   justify-content: space-between;
   @include a.medium-screen {

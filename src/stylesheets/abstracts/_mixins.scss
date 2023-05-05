@@ -89,11 +89,22 @@ $border-radius: (
   border-radius: map-get($border-radius, large);
 }
 
+//COMMON USED
+
 @mixin dog-name-list-view {
   color: b.$dark-text-color;
   margin-top: 1rem;
   margin-bottom: 2.5rem;
   font-size: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+@mixin page-title {
+  color: b.$dark-text-color;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

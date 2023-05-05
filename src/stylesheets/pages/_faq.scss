@@ -1,0 +1,17 @@
+@use "../abstracts" as a;
+
+.faq-title {
+  @include a.page-title;
+}
+
+.faq-p {
+  margin-bottom: 2rem;
+}
+
+.faq-container {
+  margin: 5rem;
+}
+
+.accordion-container {
+  max-width: 50rem;
+}

@@ -40,19 +40,21 @@ function Home() {
 
             <ul className="mt-6 space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0 sm:space-y-0 sm:gap-x-6 sm:grid sm:grid-cols-2">
               {latestDogs.map((dog: Dog) => (
-                <Link to={`/dogs/${dog.url}`}>
-                  <li key={dog.headShot} className="group relative">
-                    <div className="relative h-full w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-full sm:aspect-h-full sm:h-full lg:aspect-w-full lg:aspect-h-1">
-                      <img
-                        src={baseUrl + dog.date + "/" + dog.standLeft}
-                        alt=""
-                        className="h-full w-full object-cover object-center"
-                      />
+                <li key={dog.headShot}>
+                  <Link to={`/dogs/${dog.url}`}>
+                    <div className="group relative">
+                      <div className="relative h-full w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-full sm:aspect-h-full sm:h-full lg:aspect-w-full lg:aspect-h-1">
+                        <img
+                          src={baseUrl + dog.date + "/" + dog.standLeft}
+                          alt=""
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <p className="photo-date">Fotad: {dog.date}</p>
+                      <p className="new-dog-name">{dog.name}</p>
                     </div>
-                    <p className="photo-date">Fotad: {dog.date}</p>
-                    <p className="new-dog-name">{dog.name}</p>
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

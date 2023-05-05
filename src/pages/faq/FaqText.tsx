@@ -6,13 +6,13 @@ function FaqText() {
       id: "1",
       label: "Kostar fotograferingen och får jag bilderna?",
       content:
-        "You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.",
+        "Fotograferingen är kostnadsfri och du får spara ner och använda bilderna från hemsidan med logga på.",
     },
     {
       id: "2",
-      label: "Kan jag köpa bilderna?",
+      label: "Kan jag köpa bilderna högupplösta?",
       content:
-        "You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.",
+        "Absolut! Pengarna går till att driva galleriet vidare. En bild kostar 250kr och tre bilder kostar 500kr",
     },
     {
       id: "3",
@@ -24,7 +24,7 @@ function FaqText() {
       id: "4",
       label: "Vad ska jag tänka på inför fotograferingen?",
       content:
-        "You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.",
+        "Ta med gott godis och eventuellt en leksak. Kan din hund inte vara lös kan ni ta med ett utställningskoppel, det kommer att redigeras bort om möjligt. Det är alltid bra att träna lite på att hunden ska kunna stå och sitta stilla innan fotograferingen.",
     },
     {
       id: "4",
