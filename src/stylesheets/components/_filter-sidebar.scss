@@ -8,12 +8,26 @@
   margin-bottom: 2rem;
 }
 
-.filter-sidebar-container {
+.filter-container-hidden {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear, opacity 0.2s linear;
   max-width: 20rem;
   @include respond-to-max(xl) {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.2s, opacity 0.2s linear;
   }
 }
+
+.filter-container {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear, opacity 0.2s linear;
+}
+
 .h2 {
   font-size: 1.5rem;
   margin-top: 1rem;
@@ -122,23 +136,4 @@
   @include respond-to-max(xl) {
     display: block;
   }
-}
-
-.filter-ipad-container {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s linear, opacity 0.2s linear;
-  @media (min-width: 1024px) {
-    .filter-ipad-container {
-      display: none;
-    }
-  }
-}
-
-.filter-ipad-container-hidden {
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.2s, opacity 0.2s linear;
 }

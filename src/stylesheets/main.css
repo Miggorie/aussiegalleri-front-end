@@ -47,13 +47,26 @@ img {
   margin-bottom: 2rem;
 }
 
-.filter-sidebar-container {
+.filter-container-hidden {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear, opacity 0.2s linear;
   max-width: 20rem;
 }
 @media (max-width: 1023px) {
-  .filter-sidebar-container {
-    display: none;
+  .filter-container-hidden {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.2s, opacity 0.2s linear;
   }
+}
+
+.filter-container {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear, opacity 0.2s linear;
 }
 
 .h2 {
@@ -168,25 +181,6 @@ img {
   }
 }
 
-.filter-ipad-container {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s linear, opacity 0.2s linear;
-}
-@media (min-width: 1024px) {
-  .filter-ipad-container .filter-ipad-container {
-    display: none;
-  }
-}
-
-.filter-ipad-container-hidden {
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.2s, opacity 0.2s linear;
-}
-
 .dog-name {
   color: rgb(55, 65, 81);
   margin-top: 1rem;
@@ -202,6 +196,23 @@ img {
   letter-spacing: 0.05em;
   font-weight: 600;
   padding-left: 0.75rem;
+}
+
+.new-dog-name {
+  color: rgb(55, 65, 81);
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 0.2rem;
+  color: rgb(92, 92, 92);
+  font-weight: 550;
+}
+
+.photo-date {
+  color: rgb(92, 92, 92);
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
 }
 
 .m-round {

@@ -17,42 +17,48 @@ function Nav() {
                 />
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <a
-                    href="http://localhost:8888"
-                    className=" hover:bg-stone-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Hem
-                  </a>
-
-                  <a
-                    href="http://localhost:8888/dogs"
-                    className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Galleriet
-                  </a>
-
-                  <a
-                    href="http://localhost:8888/faq"
-                    className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    FAQ
-                  </a>
-
-                  <a
-                    href="http://localhost:8888/about"
-                    className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Om galleriet
-                  </a>
-
-                  <a
-                    href="http://localhost:8888/Contact"
-                    className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Kontakt
-                  </a>
-                </div>
+                <ul className="ml-10 flex items-baseline space-x-4">
+                  <li>
+                    <a
+                      href="http://localhost:8888"
+                      className=" hover:bg-stone-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Hem
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://localhost:8888/dogs"
+                      className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Galleriet
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://localhost:8888/faq"
+                      className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      FAQ
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://localhost:8888/about"
+                      className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Om galleriet
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://localhost:8888/Contact"
+                      className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Kontakt
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">

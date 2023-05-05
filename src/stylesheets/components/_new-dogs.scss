@@ -1,0 +1,15 @@
+@use "../abstracts" as a;
+@use "../base" as b;
+
+.new-dog-name {
+  @include a.dog-name-list-view;
+  margin-top: 0.2rem;
+  color: rgb(92, 92, 92);
+  font-weight: 550;
+}
+
+.photo-date {
+  color: rgb(92, 92, 92);
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}

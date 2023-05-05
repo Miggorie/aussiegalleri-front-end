@@ -111,12 +111,13 @@ function DogPage() {
                 <div
                   className={
                     ipadFilterIsOpen
-                      ? "filter-ipad-container"
-                      : "filter-ipad-container-hidden filter-sidebar-container"
+                      ? "filter-container"
+                      : "filter-container-hidden"
                   }
                 >
                   {" "}
                   <div className="">
+                    <h2 className="h2">Filtrera</h2>
                     <fieldset>
                       <div className="filter-all-container">
                         <legend className="button-container">

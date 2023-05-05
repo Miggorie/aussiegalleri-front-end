@@ -98,24 +98,26 @@ function DogList({
 
   return (
     <div>
-      <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
+      <ul className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
         {searchDogs?.map((searchDog: Dog) => (
-          <a
-            key={searchDog.dogID}
-            href={`/dogs/${searchDog.url}`}
-            className="group"
-          >
-            <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
-              <img
-                src={baseUrl + searchDog.date + "/" + searchDog.standLeft}
-                alt=""
-                className="h-full w-full object-cover object-center group-hover:opacity-75"
-              />
-            </div>
-            <p className="dog-name">{searchDog.name}</p>
-          </a>
+          <li>
+            <a
+              key={searchDog.dogID}
+              href={`/dogs/${searchDog.url}`}
+              className="group"
+            >
+              <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
+                <img
+                  src={baseUrl + searchDog.date + "/" + searchDog.standLeft}
+                  alt=""
+                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                />
+              </div>
+              <p className="dog-name">{searchDog.name}</p>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

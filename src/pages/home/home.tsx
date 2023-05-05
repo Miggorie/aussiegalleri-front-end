@@ -38,10 +38,10 @@ function Home() {
               Nya i galleriet
             </h2>
 
-            <div className="mt-6 space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0 sm:space-y-0 sm:gap-x-6 sm:grid sm:grid-cols-2">
+            <ul className="mt-6 space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0 sm:space-y-0 sm:gap-x-6 sm:grid sm:grid-cols-2">
               {latestDogs.map((dog: Dog) => (
                 <Link to={`/dogs/${dog.url}`}>
-                  <div key={dog.headShot} className="group relative">
+                  <li key={dog.headShot} className="group relative">
                     <div className="relative h-full w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-full sm:aspect-h-full sm:h-full lg:aspect-w-full lg:aspect-h-1">
                       <img
                         src={baseUrl + dog.date + "/" + dog.standLeft}
@@ -49,17 +49,12 @@ function Home() {
                         className="h-full w-full object-cover object-center"
                       />
                     </div>
-                    <p className="mt-6 text-sm text-gray-500">
-                      <span className="absolute inset-0" />
-                      Fotad: {dog.date}
-                    </p>
-                    <p className="text-base font-semibold text-gray-900">
-                      {dog.name}
-                    </p>
-                  </div>
+                    <p className="photo-date">Fotad: {dog.date}</p>
+                    <p className="new-dog-name">{dog.name}</p>
+                  </li>
                 </Link>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
