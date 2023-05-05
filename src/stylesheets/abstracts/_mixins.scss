@@ -97,3 +97,35 @@ $border-radius: (
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
+//RESPONSIVE
+
+@mixin xs-screen {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin small-screen {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @media only screen and (min-width: 1536px) {
+    @content;
+  }
+}

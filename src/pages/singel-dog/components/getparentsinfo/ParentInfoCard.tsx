@@ -4,14 +4,13 @@ import { Litter } from "../../../../interfaces/Interfaces";
 function ParentInfoCard(parents: Litter) {
   return (
     <div>
-      <p className="inline-block py-px text-m font-semibold tracking-wider text-stone-900">
-        e. {parents.sire}
+      <div className="parents-container">
+        <p className="parents-name">e. {parents.sire}</p>
+        <p className="parents-name">u. {parents.dam}</p>
+      </div>
+      <p>
+        <span className="dog-info-title">Född:</span> {parents.born}
       </p>
-      <br></br>
-      <p className="inline-block py-px text-m font-semibold tracking-wider text-stone-900">
-        u. {parents.dam}
-      </p>
-      <p className="pt-4">Född: {parents.born}</p>
     </div>
   );
 }
