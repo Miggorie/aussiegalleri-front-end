@@ -39,7 +39,7 @@ function Nav() {
                       href="http://localhost:8888/faq"
                       className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
-                      FAQ
+                      Vanliga frågor
                     </a>
                   </li>
                   <li>
@@ -138,7 +138,7 @@ function Nav() {
                   href="/"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  FAQ
+                  Vanliga frågor
                 </a>
 
                 <a

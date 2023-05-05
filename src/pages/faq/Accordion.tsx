@@ -30,16 +30,15 @@ function Accordion({ items }: { items: FaqItem[] }) {
 
     return (
       <div key={item.id}>
-        <div
-          className="flex justify-between p-3 bg-stone-50 border-b items-center cursor-pointer rounded-lg"
+        <button
+          aria-expanded={isExpanded}
+          className="accordion"
           onClick={() => handleClick(index)}
         >
           {item.label}
           {icon}
-        </div>
-        {isExpanded && (
-          <div className="border-b p-5 rounded">{item.content}</div>
-        )}
+        </button>
+        {isExpanded && <div className="accordion-open">{item.content}</div>}
       </div>
     );
   });

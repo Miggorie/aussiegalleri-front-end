@@ -1,0 +1,15 @@
+@use "../abstracts" as a;
+@use "../base" as b;
+
+.accordion {
+  padding: 1rem;
+  background-color: b.$lighter-brown;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.accordion-open {
+  border: solid 1px b.$lighter-brown;
+  padding: 2rem 1rem;
+}

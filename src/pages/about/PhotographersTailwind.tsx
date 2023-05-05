@@ -37,7 +37,7 @@ const Photographers = () => {
               <p className="mb-4 text-xs text-gray-100">
                 Grundare, Fotograf och Utvecklare
               </p>
-              <p className="mb-4 text-xs tracking-wide text-gray-400">
+              <p className="mb-4 text-xs tracking-wide text-gray-200">
                 Jalma grundade aussiegalleriet och tog de första bilderna och
                 skapade den första hemsidan! Jalma utgår från Stockholm.
               </p>
@@ -74,7 +74,7 @@ const Photographers = () => {
               <p className="mb-4 text-xs text-gray-100">
                 Fotograf och Utvecklare
               </p>
-              <p className="mb-4 text-xs tracking-wide text-gray-400">
+              <p className="mb-4 text-xs tracking-wide text-gray-200">
                 Elin har fotograferat många hundra hundar till galleriet genom
                 åren, och även utvecklat den nuvarande hemsidan. Elin utgår från
                 Mariefred.
@@ -110,7 +110,7 @@ const Photographers = () => {
             <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
               <p className="mb-1 text-lg font-bold text-gray-100">Emelia</p>
               <p className="mb-4 text-xs text-gray-100">Fotograf</p>
-              <p className="mb-4 text-xs tracking-wide text-gray-400">
+              <p className="mb-4 text-xs tracking-wide text-gray-200">
                 Emelia har fotograferat för galleriet i många år och tar väldigt
                 fina bilder. Hon är ofta på utställningar uppåt i landet. Emelia
                 utgår från Timrå.
@@ -148,7 +148,7 @@ const Photographers = () => {
                 Lina Malmqvist
               </p>
               <p className="mb-4 text-xs text-gray-100">Fotograf</p>
-              <p className="mb-4 text-xs tracking-wide text-gray-400">
+              <p className="mb-4 text-xs tracking-wide text-gray-200">
                 Lina är nyast i gänget, en duktig fotograf med ett öga för att
                 ställa upp hundar snyggt. Lina utgår från Ängelholm.
               </p>
