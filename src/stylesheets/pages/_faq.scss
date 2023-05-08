@@ -10,6 +10,9 @@
 
 .faq-container {
   margin: 5rem;
+  @include a.small-screen {
+    margin: 1.2rem;
+  }
 }
 
 .accordion-container {

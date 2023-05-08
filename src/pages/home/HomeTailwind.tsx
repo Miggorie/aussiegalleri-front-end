@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HomeComponent() {
   return (
     <div className="isolate bg-white">
@@ -13,15 +15,15 @@ export default function HomeComponent() {
                   Ett online fotogalleri för Sveriges australian shepherds!
                 </p>
                 <div className="mt-8 flex gap-x-4 justify-center">
-                  <a
-                    href="#"
+                  <Link
+                    to="/dogs"
                     className="inline-block rounded-lg bg-stone-600 px-4 py-1.5 text-base font-semibold leading-7 text-white ring-1 ring-stone-600 hover:bg-stone-700 hover:ring-strone-700"
                   >
                     Till galleriet{" "}
                     <span className="text-stone-200" aria-hidden="true">
                       &rarr;
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

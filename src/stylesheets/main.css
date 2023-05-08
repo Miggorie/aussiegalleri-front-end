@@ -409,6 +409,29 @@ img {
   }
 }
 
+.dogpage-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .dogpage-header {
+    display: block;
+  }
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.search-filter-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .faq-title {
   color: rgb(55, 65, 81);
   margin-top: 1rem;
@@ -423,6 +446,11 @@ img {
 
 .faq-container {
   margin: 5rem;
+}
+@media (max-width: 768px) {
+  .faq-container {
+    margin: 1.2rem;
+  }
 }
 
 .accordion-container {

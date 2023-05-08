@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,44 +20,44 @@ function Nav() {
               <div className="hidden md:block">
                 <ul className="ml-10 flex items-baseline space-x-4">
                   <li>
-                    <a
-                      href="http://localhost:8888"
-                      className=" hover:bg-stone-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                    <Link
+                      to="/"
+                      className="hover:bg-stone-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Hem
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="http://localhost:8888/dogs"
+                    <Link
+                      to="/dogs"
                       className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Galleriet
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="http://localhost:8888/faq"
+                    <Link
+                      to="/faq"
                       className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Vanliga frågor
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="http://localhost:8888/about"
+                    <Link
+                      to="/about"
                       className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Om galleriet
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="http://localhost:8888/Contact"
+                    <Link
+                      to="/Contact"
                       className="text-stone-200 hover:bg-stone-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       Kontakt
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -120,40 +121,40 @@ function Nav() {
           {(ref) => (
             <div className="md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="hover:bg-stone-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Hem
-                </a>
+                </Link>
 
-                <a
-                  href="/"
+                <Link
+                  to="dogs"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Galleriet
-                </a>
+                </Link>
 
-                <a
-                  href="/"
+                <Link
+                  to="/faq"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Vanliga frågor
-                </a>
+                </Link>
 
-                <a
-                  href="/"
+                <Link
+                  to="/about"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Om galleriet
-                </a>
+                </Link>
 
-                <a
-                  href="/"
+                <Link
+                  to="/Contact"
                   className="text-stone-200 hover:bg-stone-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Kontakt
-                </a>
+                </Link>
               </div>
             </div>
           )}

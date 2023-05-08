@@ -1,0 +1,23 @@
+@use "../abstracts" as a;
+@use "../base" as b;
+
+.dogpage-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  @include a.small-screen {
+    display: block;
+  }
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.search-filter-container {
+  display: flex;
+  justify-content: space-between;
+}

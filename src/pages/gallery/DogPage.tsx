@@ -87,14 +87,15 @@ function DogPage() {
       <div className="bg-white">
         <div>
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-baseline border-b border-stone-200 pt-14 pb-8">
-              <h1 className="text-2xl font-semibold">Aussiegalleriet</h1>
-              <div className="w-5/6">
-                <SearchBar
-                  onChange={(filterTerm) => setSearchTerm(filterTerm)}
-                />
-              </div>
-              <div>
+            <div className="dogpage-header">
+              <h1 className="page-title">Aussiegalleriet</h1>
+              <div className="search-filter-container">
+                <div className="searchbar-container">
+                  <SearchBar
+                    onChange={(filterTerm) => setSearchTerm(filterTerm)}
+                  />
+                </div>
+
                 <button
                   className="mobile-filter"
                   aria-expanded={ipadFilterIsOpen}
