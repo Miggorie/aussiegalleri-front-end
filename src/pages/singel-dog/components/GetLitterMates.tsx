@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Dog } from "../../../interfaces/Interfaces";
+import { Link } from "react-router-dom";
 
 interface Props {
   currentDog: Dog;
@@ -26,7 +27,7 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
       }
     }
     fetchLitterMate();
-  }, []);
+  }, [currentUrl]);
 
   return (
     <div>
@@ -34,26 +35,24 @@ const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
         <>
           <h3 className="dog-list-title">Kullsyskon</h3>
           <div className="bg-white">
-            <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
+            <ul className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
               {littermate?.map((littermate: Dog) => (
-                <a
-                  key={littermate.dogID}
-                  href={`/dogs/${littermate.url}`}
-                  className="group"
-                >
-                  <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
-                    <img
-                      src={
-                        baseUrl + littermate.date + "/" + littermate.standLeft
-                      }
-                      alt=""
-                      className="h-full w-full object-cover object-center group-hover:opacity-75"
-                    />
-                  </div>
-                  <p className="dog-name">{littermate.name}</p>
-                </a>
+                <li key={littermate.dogID}>
+                  <Link to={`/dogs/${littermate.url}`}>
+                    <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
+                      <img
+                        src={
+                          baseUrl + littermate.date + "/" + littermate.standLeft
+                        }
+                        alt=""
+                        className="h-full w-full object-cover object-center group-hover:opacity-75"
+                      />
+                    </div>
+                    <p className="dog-name">{littermate.name}</p>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </>
       ) : null}

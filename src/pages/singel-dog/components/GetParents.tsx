@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Dog } from "../../../interfaces/Interfaces";
+import { Link } from "react-router-dom";
 
 interface Props {
   currentDog: Dog;
@@ -27,7 +28,7 @@ const GetParents: React.FC<Props> = ({ currentDog }) => {
       }
     }
     fetchOffspring();
-  }, []);
+  }, [currentUrl]);
 
   return (
     <div>
@@ -36,13 +37,8 @@ const GetParents: React.FC<Props> = ({ currentDog }) => {
           <h3 className="dog-list-title">Föräldrar</h3>
           <ul className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-4">
             {parents?.map((parents: Dog) => (
-              <li>
-                {" "}
-                <a
-                  key={parents.dogID}
-                  href={`/dogs/${parents.url}`}
-                  className="group"
-                >
+              <li key={parents.dogID}>
+                <Link to={`/dogs/${parents.url}`}>
                   <div className="aspect-ratio: auto w-full overflow-hidden m-round">
                     <img
                       src={baseUrl + parents.date + "/" + parents.standLeft}
@@ -51,7 +47,7 @@ const GetParents: React.FC<Props> = ({ currentDog }) => {
                     />
                   </div>
                   <p className="dog-name">{parents.name}</p>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
