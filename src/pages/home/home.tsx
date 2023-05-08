@@ -40,7 +40,7 @@ function Home() {
 
             <ul className="mt-6 space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0 sm:space-y-0 sm:gap-x-6 sm:grid sm:grid-cols-2">
               {latestDogs.map((dog: Dog) => (
-                <li key={dog.headShot}>
+                <li key={dog.dogID}>
                   <Link to={`/dogs/${dog.url}`}>
                     <div className="group relative">
                       <div className="relative h-full w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-full sm:aspect-h-full sm:h-full lg:aspect-w-full lg:aspect-h-1">

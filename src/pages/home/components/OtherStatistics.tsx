@@ -11,7 +11,6 @@ const OtherStatistic = () => {
           "http://aussiegalleri.se/api/statistics/statistics.php"
         );
         const data = response.data;
-        console.log(data);
         setDogcount(data);
       } catch (error) {
         console.log(error);
@@ -22,7 +21,10 @@ const OtherStatistic = () => {
 
   const renderDogs = (dogcount: CountDogs[]) => {
     return dogcount.map((dogcount: CountDogs) => (
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div
+        key={dogcount.total_adults}
+        className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      >
         <div className="grid grid-cols-2 row-gap-8 md:grid-cols-4">
           <div className="text-center md:border-r">
             <h3 className="text-4xl font-bold lg:text-5xl xl:text-6xl">

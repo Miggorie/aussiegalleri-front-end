@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useDogContext from "../../hooks/use-dog-context";
 import { Dog } from "../../interfaces/Interfaces";
 import { originIds, colorIds } from "./components/FilterID";
@@ -53,6 +54,7 @@ function DogList({
         if (state && dog.colorID === colorIds[index]) {
           return true;
         }
+        return false; // add a return statement
       });
     });
   }
@@ -64,6 +66,7 @@ function DogList({
         if (state && dog.originID === originIds[index]) {
           return true;
         }
+        return false; // add a return statement
       });
     });
   }
@@ -100,12 +103,8 @@ function DogList({
     <div>
       <ul className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
         {searchDogs?.map((searchDog: Dog) => (
-          <li>
-            <a
-              key={searchDog.dogID}
-              href={`/dogs/${searchDog.url}`}
-              className="group"
-            >
+          <li key={searchDog.url} className="group">
+            <Link to={`/dogs/${searchDog.url}`}>
               <div className="aspect-ratio: auto w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-ratio:">
                 <img
                   src={baseUrl + searchDog.date + "/" + searchDog.standLeft}
@@ -114,7 +113,7 @@ function DogList({
                 />
               </div>
               <p className="dog-name">{searchDog.name}</p>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

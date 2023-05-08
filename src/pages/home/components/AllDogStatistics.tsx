@@ -11,7 +11,6 @@ const AllDogStatistics = () => {
           "http://aussiegalleri.se/api/statistics/statistics.php"
         );
         const data = response.data;
-        console.log(data);
         setDogcount(data);
       } catch (error) {
         console.log(error);
@@ -40,7 +39,10 @@ const AllDogStatistics = () => {
             </svg>
           </div>
           {dogcount?.map((dogcount: CountDogs) => (
-            <h2 className="text-4xl font-extrabold sm:text-5xl xl:text-6xl">
+            <h2
+              key={dogcount.total_dogs}
+              className="text-4xl font-extrabold sm:text-5xl xl:text-6xl"
+            >
               {dogcount.total_dogs}
               <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
                 Aussies i galleriet
