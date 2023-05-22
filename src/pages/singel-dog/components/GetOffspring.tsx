@@ -36,7 +36,7 @@ const GetOffspring: React.FC<Props> = ({ currentDog }) => {
         <>
           <h3 className="dog-list-title">Avkommor</h3>
           <div className="bg-white">
-            <div className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
+            <ul className="grid grid-cols-1 gap-y-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-4">
               {offspring?.map((offspring: Dog) => (
                 <li key={offspring.dogID}>
                   <Link to={`/dogs/${offspring.url}`}>
@@ -53,7 +53,7 @@ const GetOffspring: React.FC<Props> = ({ currentDog }) => {
                   </Link>
                 </li>
               ))}
-            </div>
+            </ul>
           </div>
         </>
       ) : null}

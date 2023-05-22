@@ -23,6 +23,14 @@
 
 .mobile-view-container {
   width: 100%;
+  img {
+    display: none;
+    @include a.medium-screen {
+      display: block;
+      width: 50%;
+      margin: 1rem;
+    }
+  }
   @include a.medium-screen {
     display: flex;
     justify-content: space-between;
@@ -46,8 +54,9 @@
   }
 
   @include a.medium-screen {
-    margin-top: 4rem;
+    margin-top: 3rem;
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -58,6 +67,11 @@
     align-items: center;
     padding: 1rem;
   }
+}
+
+.close-menu {
+  margin-right: 1.5rem;
+  margin-top: 0.2rem;
 }
 
 .mobile-menu-hidden {
@@ -107,4 +121,17 @@
   .bar3 {
     transform: translate(0, -7px) rotate(45deg);
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
 }

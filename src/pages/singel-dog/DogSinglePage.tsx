@@ -25,7 +25,7 @@ const SingleDog = () => {
       <div className="single-dog-main">
         <div className="info-card">
           <div className="info-container">
-            <h1 className="dog-single-title">
+            <h1>
               {currentDog.name}
               <br className="hidden md:block" />
             </h1>

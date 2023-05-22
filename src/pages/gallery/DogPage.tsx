@@ -123,6 +123,7 @@ function DogPage() {
                         <legend>
                           <div className="button-container">
                             <button
+                              type="button"
                               aria-expanded={genderIsOpen}
                               aria-controls="ul-gender"
                               onClick={() => setGenderIsOpen(!genderIsOpen)}
@@ -160,6 +161,7 @@ function DogPage() {
                         <legend>
                           <div className="button-container">
                             <button
+                              type="button"
                               aria-expanded={ageIsOpen}
                               aria-controls="ul-age"
                               onClick={() => setAgeIsOpen(!ageIsOpen)}
@@ -195,6 +197,7 @@ function DogPage() {
                         <legend>
                           <div className="button-container">
                             <button
+                              type="button"
                               aria-expanded={colorIsOpen}
                               aria-controls="ul-color"
                               onClick={() => setColorIsOpen(!colorIsOpen)}
@@ -232,6 +235,7 @@ function DogPage() {
                         <div className="button-container">
                           <legend>
                             <button
+                              type="button"
                               aria-expanded={originIsOpen}
                               aria-controls="ul-ursprung"
                               onClick={() => setOriginIsOpen(!originIsOpen)}
@@ -265,6 +269,7 @@ function DogPage() {
                     </div>
                   </form>
                   <button
+                    type="button"
                     className="clear-filter m-top m-btm"
                     onClick={clearAllFilters}
                   >

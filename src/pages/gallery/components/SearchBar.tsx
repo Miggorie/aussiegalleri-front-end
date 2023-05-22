@@ -24,8 +24,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onChange }) => {
           id="searchInput"
           placeholder="Sök efter en hund..."
         />
-        <div className="search-icon" aria-hidden="true">
+        <div className="search-icon">
           <svg
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
             fill="none"

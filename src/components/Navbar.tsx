@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logga from "../images/aussie-logo-w.png";
 
 function Nav() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -48,30 +49,32 @@ function Nav() {
             className={menuIsOpen ? "mobile-menu-open" : "mobile-menu-hidden"}
           >
             <div className="mobile-view-container">
-              <div className="menu-icon-container">
-                <button
-                  className="mobile-menu close-menu"
-                  aria-expanded={menuIsOpen}
-                  aria-controls="mobile-popup"
-                  onClick={() => {
-                    setMenuIsOpen(!menuIsOpen);
-                    setShowCloseButton(!showCloseButton);
-                  }}
+              <Link to="/" onClick={closeMenu}>
+                <span className="visually-hidden">Gå till startsidan</span>
+                <img src={logga} alt="Aussiegalleriets logga" />
+              </Link>
+              <button
+                className="mobile-menu close-menu"
+                aria-expanded={menuIsOpen}
+                aria-controls="mobile-popup"
+                onClick={() => {
+                  setMenuIsOpen(!menuIsOpen);
+                  setShowCloseButton(!showCloseButton);
+                }}
+              >
+                <span
+                  className={
+                    menuIsOpen
+                      ? "hamburger-container change"
+                      : "hamburger-container"
+                  }
                 >
-                  <span
-                    className={
-                      menuIsOpen
-                        ? "hamburger-container change"
-                        : "hamburger-container"
-                    }
-                  >
-                    <span className="bar1"></span>
-                    <span className="bar2"></span>
-                    <span className="bar3"></span>
-                  </span>
-                  Meny
-                </button>
-              </div>
+                  <span className="bar1"></span>
+                  <span className="bar2"></span>
+                  <span className="bar3"></span>
+                </span>
+                Meny
+              </button>
             </div>
             <ul className="nav-ul">
               <li>
