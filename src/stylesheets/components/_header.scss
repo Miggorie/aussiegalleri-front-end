@@ -16,6 +16,9 @@
   padding: 1.5rem;
   max-width: 103rem;
   margin: 0 auto;
+  @include a.medium-screen {
+    display: block;
+  }
 }
 
 .mobile-view-container {
@@ -38,12 +41,12 @@
     min-width: 7rem;
     @include a.medium-screen {
       padding: 1rem;
+      font-size: 1.2rem;
     }
   }
 
   @include a.medium-screen {
-    margin-top: 1rem;
-    align-items: center;
+    margin-top: 4rem;
     flex-direction: column;
   }
 }
@@ -51,9 +54,12 @@
 .mobile-menu {
   display: none;
   @include a.medium-screen {
-    display: block;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
   }
 }
+
 .mobile-menu-hidden {
   @include a.medium-screen {
     height: 0;
@@ -74,7 +80,31 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: b.$lighter-brown;
+    background-color: #57534f;
     z-index: 9999;
+  }
+}
+
+.hamburger-container {
+  padding-right: 0.5rem;
+  span {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.1s;
+    display: block;
+  }
+}
+
+.change {
+  .bar1 {
+    transform: translate(0, 9px) rotate(-45deg);
+  }
+  .bar2 {
+    opacity: 0;
+  }
+  .bar3 {
+    transform: translate(0, -7px) rotate(45deg);
   }
 }

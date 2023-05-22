@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
-import Footer from "./components/footercomponent/Footer";
-import Header from "./components/headercomponent/Navbar";
+import Footer from "./components/Footer";
+import Header from "./components/Navbar";
 import SingleDog from "./pages/singel-dog/DogSinglePage";
 import About from "./pages/about/About";
 import Faq from "./pages/faq/Faq";
