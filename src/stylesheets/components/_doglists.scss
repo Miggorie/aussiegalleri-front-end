@@ -3,6 +3,9 @@
 
 .dog-name {
   @include a.dog-name-list-view;
+  @include a.xs-screen {
+    margin-bottom: 0rem;
+  }
 }
 
 .dog-list-title {
@@ -12,4 +15,51 @@
   letter-spacing: 0.05em;
   font-weight: 600;
   padding-left: 0.75rem;
+}
+
+.dog-page-container {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 103rem;
+
+  @include a.xs-screen {
+    padding: 1rem;
+    padding-top: 0rem;
+  }
+}
+
+.doglist-container {
+  display: flex;
+  @include a.medium-screen {
+    display: block;
+  }
+}
+
+.dog-ul {
+  display: flex;
+  flex-wrap: wrap;
+  transition: width 0.3s ease;
+
+  li {
+    padding: 1rem;
+    @include a.xl-screen {
+      width: 25%;
+    }
+
+    @include a.max-xl-screen {
+      width: 33.2%;
+    }
+
+    @include a.large-screen {
+      width: 50%;
+    }
+
+    @include a.xs-screen {
+      width: 100%;
+    }
+
+    img {
+      border-radius: 0.3rem;
+    }
+  }
 }

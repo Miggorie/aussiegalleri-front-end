@@ -86,7 +86,7 @@ function DogPage() {
     <div>
       <div className="bg-white">
         <div>
-          <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <main className="dog-page-container">
             <div className="dogpage-header">
               <h1 className="page-title">Aussiegalleriet</h1>
               <div className="search-filter-container">
@@ -107,18 +107,18 @@ function DogPage() {
             </div>
 
             {/* Datorfiltrering */}
-            <section className="pt-6 pb-24">
-              <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                <div
-                  className={
-                    ipadFilterIsOpen
-                      ? "filter-container"
-                      : "filter-container-hidden"
-                  }
-                >
-                  {" "}
-                  <div className="">
-                    <h2 className="h2">Filtrera</h2>
+            <section className="doglist-container">
+              <div
+                className={
+                  ipadFilterIsOpen
+                    ? "filter-container"
+                    : "filter-container-hidden"
+                }
+              >
+                {" "}
+                <div className="filter-sidebar">
+                  <h2 className="h2">Filtrera</h2>
+                  <div className="test">
                     <fieldset>
                       <div className="filter-all-container">
                         <legend className="button-container">
@@ -243,26 +243,24 @@ function DogPage() {
                         </ul>
                       </div>
                     </fieldset>
-                    <div>
-                      <button
-                        className="clear-filter m-top m-btm"
-                        onClick={clearAllFilters}
-                      >
-                        Rensa filter
-                      </button>
-                    </div>
                   </div>
+                  <button
+                    className="clear-filter m-top m-btm"
+                    onClick={clearAllFilters}
+                  >
+                    Rensa filter
+                  </button>
                 </div>
-                <div className="lg:col-span-3">
-                  <DogList
-                    searchTerm={searchTerm}
-                    genderState={genderState}
-                    colorState={colorState}
-                    originState={originState}
-                    ageState={ageState}
-                  />
-                  <div />
-                </div>
+              </div>
+              <div className="lg:col-span-3">
+                <DogList
+                  searchTerm={searchTerm}
+                  genderState={genderState}
+                  colorState={colorState}
+                  originState={originState}
+                  ageState={ageState}
+                />
+                <div />
               </div>
             </section>
           </main>

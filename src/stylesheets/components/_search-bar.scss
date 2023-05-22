@@ -1,0 +1,36 @@
+@use "../abstracts" as a;
+@use "../base" as b;
+
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  @include a.xs-screen {
+    display: block;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.searchbar {
+  display: flex;
+  width: 100%;
+}
+
+.search-icon {
+  background-color: b.$lighter-brown;
+  color: black;
+  margin-right: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 0rem 0.3rem 0.3rem 0rem;
+}
+
+.search-input {
+  border-radius: 0.3rem 0rem 0rem 0.3rem;
+  border: solid 0.1rem b.$lighter-brown;
+  width: 20rem;
+  @include a.xs-screen {
+    width: 100%;
+  }
+}

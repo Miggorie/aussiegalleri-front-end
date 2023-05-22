@@ -1,4 +1,5 @@
 @use "../abstracts" as *;
+@use "../base" as b;
 
 .m-top {
   margin-top: 2rem;
@@ -13,7 +14,7 @@
   opacity: 1;
   transition: visibility 0s linear, opacity 0.2s linear;
   max-width: 20rem;
-  @include respond-to-max(xl) {
+  @include medium-screen {
     height: 0;
     overflow: hidden;
     visibility: hidden;
@@ -66,15 +67,44 @@
 }
 
 .filter-all-container {
-  width: 100%;
+  @include medium-screen {
+    background-color: #f2f0ee;
+    margin: 1rem;
+    border-radius: 0rem 0rem 0.3rem 0.3rem;
+    padding-bottom: 0.1rem;
+  }
 }
 
+.test {
+  @include medium-screen {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include xs-screen {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .accordion-button {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.5rem;
-  width: 100%;
+  padding: 0.8rem;
+  min-width: 16rem;
+  @include medium-screen {
+    min-width: 20rem;
+    display: flex;
+    background-color: b.$lighter-brown;
+    border-radius: 0.2rem;
+  }
+  @include small-screen {
+    min-width: 15rem;
+    display: flex;
+  }
+  @include xs-screen {
+    min-width: 100%;
+    display: flex;
+  }
 }
 
 .button-up,
@@ -84,6 +114,9 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  @include medium-screen {
+    margin-top: 0rem;
+  }
 }
 
 .button-up::after,
@@ -125,15 +158,33 @@
 }
 
 .clear-filter {
-  background-color: $btn-color;
+  background-color: #57534f;
+  color: white;
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
+  border: solid 2px white;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-color;
+    color: black;
+  }
 }
 
 .mobile-filter {
   display: none;
-  padding: 1rem;
-  @include respond-to-max(xl) {
+  @include medium-screen {
     display: block;
+    background-color: b.$lighter-brown;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+  }
+  &:hover,
+  &:focus {
+    background-color: $dark-grey;
+    color: white;
+  }
+  @include xs-screen {
+    margin-top: 1rem;
   }
 }
