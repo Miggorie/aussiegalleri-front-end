@@ -3,7 +3,7 @@ const Footer = () => {
     <div className="main-footer">
       <div className="main-footer-container">
         <div className="footer-text-container">
-          <h3 className="footer-rubrik">Aussiegalleri</h3>
+          <h2 className="footer-rubrik">Aussiegalleri</h2>
           <section className="footer-p-container">
             <p className="footer-p">
               Aussiegalleriet är till för att visa mångfalden inom rasen
@@ -16,7 +16,7 @@ const Footer = () => {
           </section>
         </div>
         <div className="footer-p-container">
-          <p className="footer-rubrik">Kontakta oss</p>
+          <h2 className="footer-rubrik">Kontakta oss</h2>
 
           <div className="flex">
             <p className="mr-1 text-white">Email:</p>
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         <div>
           <div className="footer-p-container">
-            <h3 className="footer-rubrik">Socialmedia</h3>
+            <h2 className="footer-rubrik">Socialmedia</h2>
             <div className="flex items-center mt-1 space-x-3">
               <a
                 href="https://www.instagram.com/aussiegalleri/"
