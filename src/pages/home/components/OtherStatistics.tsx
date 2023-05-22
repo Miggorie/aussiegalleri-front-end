@@ -21,42 +21,23 @@ const OtherStatistic = () => {
 
   const renderDogs = (dogcount: CountDogs[]) => {
     return dogcount.map((dogcount: CountDogs) => (
-      <div
-        key={dogcount.total_adults}
-        className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
-      >
-        <div className="grid grid-cols-2 row-gap-8 md:grid-cols-4">
-          <div className="text-center md:border-r">
-            <h3 className="text-4xl font-bold lg:text-5xl xl:text-6xl">
-              {dogcount.total_adults}
-              <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-                Vuxna hundar
-              </p>
-            </h3>
+      <div key={dogcount.total_adults} className="">
+        <div className="other-statistics-container">
+          <div className="other-statistics-text">
+            <h3>{dogcount.total_adults}</h3>
+            <p>Vuxna hundar</p>
           </div>
-          <div className="text-center md:border-r">
-            <h3 className="text-4xl font-bold lg:text-5xl xl:text-6xl">
-              {dogcount.total_pups}
-            </h3>
-            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-              Hundar under 1 år
-            </p>
+          <div className="other-statistics-text">
+            <h3>{dogcount.total_pups}</h3>
+            <p>Under 1 år</p>
           </div>
-          <div className="text-center md:border-r">
-            <h3 className="text-4xl font-bold lg:text-5xl xl:text-6xl">
-              {dogcount.total_females}
-            </h3>
-            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-              Tikar
-            </p>
+          <div className="other-statistics-text">
+            <h3>{dogcount.total_females}</h3>
+            <p>Tikar</p>
           </div>
-          <div className="text-center">
-            <h3 className="text-4xl font-bold lg:text-5xl xl:text-6xl">
-              {dogcount.total_males}
-            </h3>
-            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-              Hanar
-            </p>
+          <div className="other-statistics-text">
+            <h3>{dogcount.total_males}</h3>
+            <p>Hanar</p>
           </div>
         </div>
       </div>
