@@ -5,7 +5,7 @@ type CheckboxProps = {
 };
 
 export const Checkbox = ({ label, state, onChange }: CheckboxProps) => (
-  <form className="checkbox-item">
+  <div className="checkbox-item">
     <div className="checkbox-container">
       <input
         className="checkbox-input"
@@ -20,5 +20,5 @@ export const Checkbox = ({ label, state, onChange }: CheckboxProps) => (
         {label}
       </label>
     </div>
-  </form>
+  </div>
 );

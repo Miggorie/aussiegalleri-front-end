@@ -115,27 +115,31 @@ function DogPage() {
                     : "filter-container-hidden"
                 }
               >
-                {" "}
                 <div className="filter-sidebar">
                   <h2 className="h2">Filtrera</h2>
-                  <div className="test">
-                    <fieldset>
-                      <div className="filter-all-container">
-                        <legend className="button-container">
-                          <button
-                            className="accordion-button"
-                            aria-expanded={genderIsOpen}
-                            onClick={() => setGenderIsOpen(!genderIsOpen)}
-                          >
-                            <h3 className="filter-list-heading">Kön</h3>
-                            <span
-                              className={
-                                genderIsOpen ? "button-up" : "button-down"
-                              }
-                            ></span>
-                          </button>
+                  <form className="fieldset-container">
+                    <div className="fieldset">
+                      <fieldset>
+                        <legend>
+                          <div className="button-container">
+                            <button
+                              aria-expanded={genderIsOpen}
+                              aria-controls="ul-gender"
+                              onClick={() => setGenderIsOpen(!genderIsOpen)}
+                            >
+                              <div className="button-content">
+                                <h3>Kön</h3>
+                                <span
+                                  className={
+                                    genderIsOpen ? "button-up" : "button-down"
+                                  }
+                                ></span>
+                              </div>
+                            </button>
+                          </div>
                         </legend>
                         <ul
+                          id="ul-gender"
                           className={
                             genderIsOpen
                               ? "checkbox-list"
@@ -148,25 +152,31 @@ function DogPage() {
                             handleGenderChange
                           )}
                         </ul>
-                      </div>
-                    </fieldset>
-                    <fieldset>
-                      <div className="filter-all-container">
+                      </fieldset>
+                    </div>
+
+                    <div className="fieldset">
+                      <fieldset>
                         <legend>
-                          <button
-                            className="accordion-button"
-                            aria-expanded={ageIsOpen}
-                            onClick={() => setAgeIsOpen(!ageIsOpen)}
-                          >
-                            <h3 className="filter-list-heading">Ålder</h3>
-                            <span
-                              className={
-                                ageIsOpen ? "button-up" : "button-down"
-                              }
-                            ></span>
-                          </button>
+                          <div className="button-container">
+                            <button
+                              aria-expanded={ageIsOpen}
+                              aria-controls="ul-age"
+                              onClick={() => setAgeIsOpen(!ageIsOpen)}
+                            >
+                              <div className="button-content">
+                                <h3>Ålder</h3>
+                                <span
+                                  className={
+                                    ageIsOpen ? "button-up" : "button-down"
+                                  }
+                                ></span>
+                              </div>
+                            </button>
+                          </div>
                         </legend>
                         <ul
+                          id="ul-age"
                           className={
                             ageIsOpen ? "checkbox-list" : "checkbox-list-hidden"
                           }
@@ -177,26 +187,31 @@ function DogPage() {
                             handleAgeChange
                           )}
                         </ul>
-                      </div>
-                    </fieldset>
+                      </fieldset>
+                    </div>
 
-                    <fieldset>
-                      <div className="filter-all-container">
+                    <div className="fieldset">
+                      <fieldset>
                         <legend>
-                          <button
-                            className="accordion-button"
-                            aria-expanded={colorIsOpen}
-                            onClick={() => setColorIsOpen(!colorIsOpen)}
-                          >
-                            <h3 className="filter-list-heading">Färg</h3>
-                            <span
-                              className={
-                                colorIsOpen ? "button-up" : "button-down"
-                              }
-                            ></span>
-                          </button>
+                          <div className="button-container">
+                            <button
+                              aria-expanded={colorIsOpen}
+                              aria-controls="ul-color"
+                              onClick={() => setColorIsOpen(!colorIsOpen)}
+                            >
+                              <div className="button-content">
+                                <h3>Färg</h3>
+                                <span
+                                  className={
+                                    colorIsOpen ? "button-up" : "button-down"
+                                  }
+                                ></span>
+                              </div>
+                            </button>
+                          </div>
                         </legend>
                         <ul
+                          id="ul-color"
                           className={
                             colorIsOpen
                               ? "checkbox-list"
@@ -209,41 +224,46 @@ function DogPage() {
                             handleColorChange
                           )}
                         </ul>
-                      </div>
-                    </fieldset>
+                      </fieldset>
+                    </div>
 
-                    <fieldset>
-                      <div className="filter-all-container">
-                        <legend>
-                          <button
-                            className="accordion-button"
-                            aria-expanded={originIsOpen}
-                            onClick={() => setOriginIsOpen(!originIsOpen)}
+                    <div className="fieldset">
+                      <fieldset>
+                        <div className="button-container">
+                          <legend>
+                            <button
+                              aria-expanded={originIsOpen}
+                              aria-controls="ul-ursprung"
+                              onClick={() => setOriginIsOpen(!originIsOpen)}
+                            >
+                              <div className="button-content">
+                                <h3>Ursprung</h3>
+                                <span
+                                  className={
+                                    originIsOpen ? "button-up" : "button-down"
+                                  }
+                                ></span>
+                              </div>
+                            </button>
+                          </legend>
+                          <ul
+                            id="ul-ursprung"
+                            className={
+                              originIsOpen
+                                ? "checkbox-list"
+                                : "checkbox-list-hidden"
+                            }
                           >
-                            <h3 className="filter-list-heading">Ursprung</h3>
-                            <span
-                              className={
-                                originIsOpen ? "button-up" : "button-down"
-                              }
-                            ></span>
-                          </button>
-                        </legend>
-                        <ul
-                          className={
-                            originIsOpen
-                              ? "checkbox-list"
-                              : "checkbox-list-hidden"
-                          }
-                        >
-                          {renderListItems(
-                            originOptions,
-                            originState,
-                            handleOriginChange
-                          )}
-                        </ul>
-                      </div>
-                    </fieldset>
-                  </div>
+                            {renderListItems(
+                              originOptions,
+                              originState,
+                              handleOriginChange
+                            )}
+                          </ul>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </form>
                   <button
                     className="clear-filter m-top m-btm"
                     onClick={clearAllFilters}

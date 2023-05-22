@@ -9,11 +9,50 @@
   margin-bottom: 2rem;
 }
 
+.fieldset-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fieldset {
+  width: 100%;
+  border-radius: 0.2rem;
+  min-width: 15rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  legend {
+    font-weight: 500;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    @include medium-screen {
+      border-radius: 0.2rem;
+      background-color: b.$lighter-brown;
+    }
+  }
+  button {
+    width: 100%;
+  }
+  @include medium-screen {
+    width: 45%;
+    border-radius: 0.2rem;
+    margin: 0.5rem;
+  }
+  @include xs-screen {
+    width: 100%;
+  }
+}
+
+.button-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .filter-container-hidden {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear, opacity 0.2s linear;
-  max-width: 20rem;
   @include medium-screen {
     height: 0;
     overflow: hidden;
@@ -27,16 +66,13 @@
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear, opacity 0.2s linear;
+  width: 100%;
 }
 
 .h2 {
   font-size: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.filter-list-heading {
-  font-weight: 500;
 }
 
 .filter-checkbox {
@@ -62,61 +98,12 @@
   text-align: left;
 }
 
-.filter-subcategory {
-  width: 20rem;
-}
-
-.filter-all-container {
-  @include medium-screen {
-    background-color: #f2f0ee;
-    margin: 1rem;
-    border-radius: 0rem 0rem 0.3rem 0.3rem;
-    padding-bottom: 0.1rem;
-  }
-}
-
-.test {
-  @include medium-screen {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  @include xs-screen {
-    display: flex;
-    flex-direction: column;
-  }
-}
-.accordion-button {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.8rem;
-  min-width: 16rem;
-  @include medium-screen {
-    min-width: 20rem;
-    display: flex;
-    background-color: b.$lighter-brown;
-    border-radius: 0.2rem;
-  }
-  @include small-screen {
-    min-width: 15rem;
-    display: flex;
-  }
-  @include xs-screen {
-    min-width: 100%;
-    display: flex;
-  }
-}
-
 .button-up,
 .button-down {
   position: relative;
-  margin-top: 0.3rem;
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  @include medium-screen {
-    margin-top: 0rem;
-  }
 }
 
 .button-up::after,
@@ -131,7 +118,7 @@
 }
 .button-up::after {
   top: 20px;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   transform: rotate(45deg);
 }
 
