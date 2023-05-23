@@ -21,7 +21,7 @@ const OtherStatistic = () => {
 
   const renderDogs = (dogcount: CountDogs[]) => {
     return dogcount.map((dogcount: CountDogs) => (
-      <div key={dogcount.total_adults} className="">
+      <div key={dogcount.total_adults}>
         <div className="other-statistics-container">
           <div className="other-statistics-text">
             <h3>{dogcount.total_adults}</h3>

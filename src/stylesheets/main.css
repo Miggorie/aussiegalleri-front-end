@@ -70,10 +70,14 @@ img {
   flex-wrap: wrap;
 }
 
+.big-screens h3 {
+  font-weight: 500;
+}
+
 .fieldset {
   width: 100%;
   border-radius: 0.2rem;
-  min-width: 15rem;
+  min-width: 17rem;
   margin-right: 1rem;
   cursor: pointer;
 }
@@ -99,7 +103,7 @@ img {
     margin: 0.5rem;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .fieldset {
     width: 100%;
   }
@@ -131,6 +135,15 @@ img {
   opacity: 1;
   transition: visibility 0s linear, opacity 0.2s linear;
   width: 100%;
+  border: solid #e1ded8 1px;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+@media (max-width: 1024px) {
+  .filter-container {
+    background-color: white;
+    border: none;
+  }
 }
 
 .h2 {
@@ -760,7 +773,8 @@ img {
 .dogpage-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 @media (max-width: 768px) {
   .dogpage-header {

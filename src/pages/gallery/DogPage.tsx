@@ -9,6 +9,7 @@ import {
 } from "./components/FilterOptions";
 import { Checkbox } from "./components/Checkbox";
 import "../../stylesheets/main.css";
+import { useMediaQuery } from "react-responsive";
 
 const renderListItems = (
   options: { label: string }[],
@@ -32,6 +33,7 @@ function DogPage() {
   const [colorIsOpen, setColorIsOpen] = useState(false);
   const [originIsOpen, setOriginIsOpen] = useState(false);
   const [ipadFilterIsOpen, setIpadFilterIsOpen] = useState(false);
+  const isMediumScreenOrLess = useMediaQuery({ maxWidth: 1024 });
 
   const [ageState, setAgeState] = useState(
     new Array(genderOptions.length).fill(false)
@@ -119,77 +121,107 @@ function DogPage() {
                   <h2 className="h2">Filtrera</h2>
                   <form className="fieldset-container">
                     <div className="fieldset">
-                      <fieldset>
-                        <legend>
-                          <div className="button-container">
-                            <button
-                              type="button"
-                              aria-expanded={genderIsOpen}
-                              aria-controls="ul-gender"
-                              onClick={() => setGenderIsOpen(!genderIsOpen)}
-                            >
-                              <div className="button-content">
-                                <h3>Kön</h3>
-                                <span
-                                  className={
-                                    genderIsOpen ? "button-up" : "button-down"
-                                  }
-                                ></span>
-                              </div>
-                            </button>
-                          </div>
-                        </legend>
-                        <ul
-                          id="ul-gender"
-                          className={
-                            genderIsOpen
-                              ? "checkbox-list"
-                              : "checkbox-list-hidden"
-                          }
-                        >
-                          {renderListItems(
-                            genderOptions,
-                            genderState,
-                            handleGenderChange
-                          )}
-                        </ul>
-                      </fieldset>
+                      {isMediumScreenOrLess ? (
+                        <fieldset>
+                          <legend>
+                            <div className="button-container">
+                              <button
+                                type="button"
+                                aria-expanded={genderIsOpen}
+                                aria-controls="ul-gender"
+                                onClick={() => setGenderIsOpen(!genderIsOpen)}
+                              >
+                                <div className="button-content">
+                                  <h3>Kön</h3>
+                                  <span
+                                    className={
+                                      genderIsOpen ? "button-up" : "button-down"
+                                    }
+                                  ></span>
+                                </div>
+                              </button>
+                            </div>
+                          </legend>
+                          <ul
+                            id="ul-gender"
+                            className={
+                              genderIsOpen
+                                ? "checkbox-list"
+                                : "checkbox-list-hidden"
+                            }
+                          >
+                            {renderListItems(
+                              genderOptions,
+                              genderState,
+                              handleGenderChange
+                            )}
+                          </ul>
+                        </fieldset>
+                      ) : (
+                        // Visa checkboxar för stor skärm
+                        <div className="big-screens">
+                          <h3>Kön</h3>
+                          <ul className="checkbox-list">
+                            {renderListItems(
+                              genderOptions,
+                              genderState,
+                              handleGenderChange
+                            )}
+                          </ul>
+                        </div>
+                      )}
                     </div>
 
                     <div className="fieldset">
-                      <fieldset>
-                        <legend>
-                          <div className="button-container">
-                            <button
-                              type="button"
-                              aria-expanded={ageIsOpen}
-                              aria-controls="ul-age"
-                              onClick={() => setAgeIsOpen(!ageIsOpen)}
-                            >
-                              <div className="button-content">
-                                <h3>Ålder</h3>
-                                <span
-                                  className={
-                                    ageIsOpen ? "button-up" : "button-down"
-                                  }
-                                ></span>
-                              </div>
-                            </button>
-                          </div>
-                        </legend>
-                        <ul
-                          id="ul-age"
-                          className={
-                            ageIsOpen ? "checkbox-list" : "checkbox-list-hidden"
-                          }
-                        >
-                          {renderListItems(
-                            ageOptions,
-                            ageState,
-                            handleAgeChange
-                          )}
-                        </ul>
-                      </fieldset>
+                      {isMediumScreenOrLess ? (
+                        <fieldset>
+                          <legend>
+                            <div className="button-container">
+                              <button
+                                type="button"
+                                aria-expanded={ageIsOpen}
+                                aria-controls="ul-age"
+                                onClick={() => setAgeIsOpen(!ageIsOpen)}
+                              >
+                                <div className="button-content">
+                                  <h3>Ålder</h3>
+                                  <span
+                                    className={
+                                      ageIsOpen ? "button-up" : "button-down"
+                                    }
+                                  ></span>
+                                </div>
+                              </button>
+                            </div>
+                          </legend>
+                          <ul
+                            id="ul-age"
+                            className={
+                              ageIsOpen
+                                ? "checkbox-list"
+                                : "checkbox-list-hidden"
+                            }
+                          >
+                            {renderListItems(
+                              ageOptions,
+                              ageState,
+                              handleAgeChange
+                            )}
+                          </ul>
+                        </fieldset>
+                      ) : (
+                        // Visa checkboxar för stor skärm
+                        <div className="big-screens">
+                          <h3>Ålder</h3>
+                          <ul className="checkbox-list">
+                            {renderListItems(
+                              ageOptions,
+                              ageState,
+                              handleAgeChange
+                            )}
+                          </ul>
+                        </div>
+                      )}
                     </div>
 
                     <div className="fieldset">

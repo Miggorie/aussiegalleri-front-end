@@ -14,10 +14,16 @@
   flex-wrap: wrap;
 }
 
+.big-screens {
+  h3 {
+    font-weight: 500;
+  }
+}
+
 .fieldset {
   width: 100%;
   border-radius: 0.2rem;
-  min-width: 15rem;
+  min-width: 17rem;
   margin-right: 1rem;
   cursor: pointer;
   legend {
@@ -38,7 +44,7 @@
     border-radius: 0.2rem;
     margin: 0.5rem;
   }
-  @include xs-screen {
+  @include small-screen {
     width: 100%;
   }
 }
@@ -67,6 +73,13 @@
   opacity: 1;
   transition: visibility 0s linear, opacity 0.2s linear;
   width: 100%;
+  border: solid b.$lighter-brown 1px;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  @include medium-screen {
+    background-color: #ffff;
+    border: none;
+  }
 }
 
 .h2 {
