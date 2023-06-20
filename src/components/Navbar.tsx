@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logga from "../images/aussie-logo-w.png";
 
 function Nav() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [showCloseButton, setShowCloseButton] = useState(false);
+
+  const location = useLocation();
 
   const closeMenu = () => {
     setMenuIsOpen(false);
@@ -78,22 +80,58 @@ function Nav() {
             </div>
             <ul className="nav-ul">
               <li>
-                <Link className="menu-link" to="/dogs" onClick={closeMenu}>
+                <Link
+                  className={`menu-link ${
+                    location.pathname === "/dogs" ? "active-link" : ""
+                  }`}
+                  to="/dogs"
+                  onClick={closeMenu}
+                  aria-current={
+                    location.pathname === "/dogs" ? "page" : undefined
+                  }
+                >
                   Galleriet
                 </Link>
               </li>
               <li>
-                <Link className="menu-link" to="/about" onClick={closeMenu}>
+                <Link
+                  className={`menu-link ${
+                    location.pathname === "/about" ? "active-link" : ""
+                  }`}
+                  to="/about"
+                  onClick={closeMenu}
+                  aria-current={
+                    location.pathname === "/about" ? "page" : undefined
+                  }
+                >
                   Om galleriet
                 </Link>
               </li>
               <li>
-                <Link className="menu-link" to="/faq" onClick={closeMenu}>
+                <Link
+                  className={`menu-link ${
+                    location.pathname === "/faq" ? "active-link" : ""
+                  }`}
+                  to="/faq"
+                  onClick={closeMenu}
+                  aria-current={
+                    location.pathname === "/faq" ? "page" : undefined
+                  }
+                >
                   Vanliga frågor
                 </Link>
               </li>
               <li>
-                <Link className="menu-link" to="/contact" onClick={closeMenu}>
+                <Link
+                  className={`menu-link ${
+                    location.pathname === "/contact" ? "active-link" : ""
+                  }`}
+                  to="/contact"
+                  onClick={closeMenu}
+                  aria-current={
+                    location.pathname === "/contact" ? "page" : undefined
+                  }
+                >
                   Kontakta oss
                 </Link>
               </li>
