@@ -1,0 +1,33 @@
+.fotografer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1500px;
+  img {
+    width: 1000%;
+    height: 70%;
+    object-fit: cover;
+  }
+  h3 {
+    font-size: 1.5rem;
+    padding-bottom: 0.4rem;
+  }
+}
+
+.fotograf-text-content {
+  padding: 0.5rem;
+}
+
+.fotografer-role {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #3d3a38;
+  margin-bottom: 1rem;
+}
+
+.fotograf-container {
+  max-width: 45%;
+  margin-bottom: 5rem;
+}

@@ -11,11 +11,9 @@ const AbooutUs = () => {
               Storyn från början
             </p>
           </div>
-          <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:text-center">
-            Hur startade
-            <br className="hidden md:block" />
-            aussiegalleriet?
-          </h2>
+          <h1 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:text-center">
+            Hur startade aussiegalleriet?
+          </h1>
           <div className="mb-5 text-base text-gray-700 md:text-lg md:text-center">
             <p>
               Idén till aussiegalleriet föddes sommaren 2015 efter att Jalma
@@ -74,7 +72,7 @@ const AbooutUs = () => {
         <img
           className="object-cover w-full h-56 rounded shadow-lg lg:rounded lg:shadow-none md:h-96 lg:h-full"
           src={tyr}
-          alt=""
+          alt="Svart trefärgad hund som sitter på fjället"
         />
       </div>
     </div>
