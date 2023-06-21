@@ -649,32 +649,104 @@ img {
   max-width: 1500px;
 }
 .fotografer-grid img {
-  width: 1000%;
-  height: 70%;
+  width: 100%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
 }
 .fotografer-grid h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   padding-bottom: 0.4rem;
+}
+@media (max-width: 1024px) {
+  .fotografer-grid {
+    display: block;
+  }
+  .fotografer-grid img {
+    width: 50%;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+  }
+}
+@media (max-width: 640px) {
+  .fotografer-grid img {
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+  }
+}
+@media (max-width: 300px) {
+  .fotografer-grid img {
+    display: none;
+  }
 }
 
 .fotograf-text-content {
-  padding: 0.5rem;
+  padding: 1rem;
+}
+@media (max-width: 640px) {
+  .fotograf-text-content {
+    padding: 0.2rem;
+  }
 }
 
-.fotografer-role {
+.fotografer-role,
+.fotogafer-stad {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #3d3a38;
+  margin-bottom: 0.3rem;
+}
+
+.fotogafer-stad {
+  text-transform: none;
   margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #75726c;
 }
 
 .fotograf-container {
   max-width: 45%;
-  margin-bottom: 5rem;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 1024px) {
+  .fotograf-container {
+    max-width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 640px) {
+  .fotograf-container {
+    max-width: 100%;
+    display: block;
+    margin: 0rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.all-page-padding {
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .all-page-padding {
+    padding: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .all-page-padding {
+    padding: 0rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .break-word {
+    word-wrap: break-word;
+  }
 }
 
 .single-dog-main {

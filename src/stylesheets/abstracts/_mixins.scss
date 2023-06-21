@@ -111,6 +111,12 @@ $border-radius: (
 
 //RESPONSIVE
 
+@mixin xxs-screen {
+  @media (max-width: 300px) {
+    @content;
+  }
+}
+
 @mixin xs-screen {
   @media (max-width: 640px) {
     @content;

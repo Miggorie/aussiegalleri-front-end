@@ -11,7 +11,7 @@ const AbooutUs = () => {
               Storyn från början
             </p>
           </div>
-          <h1 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:text-center">
+          <h1 className="break-word mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:text-center">
             Hur startade aussiegalleriet?
           </h1>
           <div className="mb-5 text-base text-gray-700 md:text-lg md:text-center">
@@ -27,7 +27,7 @@ const AbooutUs = () => {
               Jalma insåg snart att hon inte ville driva projektet ensam och såg
               sig om efter fler euntusiaster. Hon hittade Elin, Emelia och Lina
               och tillsammans började de bygga aussiegalleriet så som det ser ut
-              idag.{" "}
+              idag.
             </p>
             <br></br>
             <p>
