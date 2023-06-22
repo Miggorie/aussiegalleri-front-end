@@ -524,6 +524,9 @@ img {
   }
 }
 
+.logga-hidden {
+  display: none;
+}
 @media (max-width: 300px) {
   .logga-hidden {
     display: none;

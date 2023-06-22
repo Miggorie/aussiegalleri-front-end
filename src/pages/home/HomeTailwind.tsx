@@ -17,9 +17,9 @@ export default function HomeComponent() {
               className="inline-block rounded-lg bg-stone-600 px-4 py-1.5 text-base font-semibold leading-7 text-white ring-1 ring-stone-600 hover:bg-stone-700 hover:ring-strone-700"
             >
               Till galleriet
-              <span className="text-stone-200" aria-hidden="true">
+              <i className="text-stone-200" aria-hidden="true">
                 &rarr;
-              </span>
+              </i>
             </Link>
           </div>
         </div>

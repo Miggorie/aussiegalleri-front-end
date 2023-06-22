@@ -52,7 +52,7 @@ function Nav() {
           >
             <div className="mobile-view-container">
               <Link className="logga-hidden" to="/" onClick={closeMenu}>
-                <span className="visually-hidden">Gå till startsidan</span>
+                <p>Gå till startsidan</p>
                 <img src={logga} alt="Aussiegalleriets logga" />
               </Link>
               <button
