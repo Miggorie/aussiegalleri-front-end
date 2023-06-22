@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="main-footer">
+    <footer className="main-footer">
       <div className="main-footer-container">
         <div className="footer-text-container">
           <h2 className="footer-rubrik">Aussiegalleri</h2>
@@ -69,7 +69,7 @@ const Footer = () => {
           © Copyright 2023 Elin Selin, Jalma Ingman. All rights reserved.
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

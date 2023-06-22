@@ -45,7 +45,7 @@ function Nav() {
             </button>
           </div>
         </div>
-        <nav>
+        <nav aria-label="Huvudmeny">
           <div
             id="mobile-popup"
             className={menuIsOpen ? "mobile-menu-open" : "mobile-menu-hidden"}

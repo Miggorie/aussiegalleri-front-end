@@ -13,6 +13,26 @@
     margin: 1rem;
     align-items: flex-start;
   }
+  @include a.xxs-screen {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.all-statistics-text {
+  h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    @include a.xxs-screen {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+.hund-ikon {
+  @include a.xxs-screen {
+    display: none;
+  }
 }
 
 .other-statistics-text {
@@ -24,9 +44,6 @@
   h3 {
     font-size: 3.5rem;
     font-weight: 700;
-    @include a.medium-screen {
-      font-size: 2.6rem;
-    }
   }
   p {
     text-transform: uppercase;

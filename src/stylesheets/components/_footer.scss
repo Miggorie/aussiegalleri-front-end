@@ -6,6 +6,7 @@
 }
 
 .main-footer-container {
+  word-break: break-all;
   padding: 5rem;
   display: flex;
   justify-content: space-between;
@@ -15,6 +16,9 @@
   @include a.medium-screen {
     display: block;
     padding: 3rem;
+  }
+  @include a.xxs-screen {
+    padding: 0.2rem;
   }
 }
 

@@ -117,7 +117,10 @@ function DogPage() {
                     : "filter-container-hidden"
                 }
               >
-                <div className="filter-sidebar">
+                <aside
+                  aria-label="Filtrera på hundar"
+                  className="filter-sidebar"
+                >
                   <h2 className="h2">Filtrera</h2>
                   <form className="fieldset-container">
                     <div className="fieldset">
@@ -307,7 +310,7 @@ function DogPage() {
                   >
                     Rensa filter
                   </button>
-                </div>
+                </aside>
               </div>
               <div className="lg:col-span-3">
                 <DogList

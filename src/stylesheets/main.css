@@ -66,8 +66,13 @@ img {
 }
 
 .fieldset-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+}
+@media (max-width: 1024px) {
+  .fieldset-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .big-screens h3 {
@@ -75,15 +80,15 @@ img {
 }
 
 .fieldset {
-  width: 100%;
   border-radius: 0.2rem;
+  max-width: 17rem;
   min-width: 17rem;
   margin-right: 1rem;
   cursor: pointer;
 }
 .fieldset legend {
   font-weight: 500;
-  width: 100%;
+  min-width: 100%;
   padding: 0.8rem;
   border: none;
 }
@@ -377,6 +382,7 @@ img {
 }
 
 .main-footer-container {
+  word-break: break-all;
   padding: 5rem;
   display: flex;
   justify-content: space-between;
@@ -388,6 +394,11 @@ img {
   .main-footer-container {
     display: block;
     padding: 3rem;
+  }
+}
+@media (max-width: 300px) {
+  .main-footer-container {
+    padding: 0.2rem;
   }
 }
 
@@ -665,6 +676,28 @@ img {
     align-items: flex-start;
   }
 }
+@media (max-width: 300px) {
+  .other-statistics-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.all-statistics-text h2 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+@media (max-width: 300px) {
+  .all-statistics-text h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .hund-ikon {
+    display: none;
+  }
+}
 
 .other-statistics-text {
   display: flex;
@@ -676,11 +709,6 @@ img {
 .other-statistics-text h3 {
   font-size: 3.5rem;
   font-weight: 700;
-}
-@media (max-width: 1024px) {
-  .other-statistics-text h3 {
-    font-size: 2.6rem;
-  }
 }
 .other-statistics-text p {
   text-transform: uppercase;
@@ -796,7 +824,7 @@ img {
     padding: 1rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 300px) {
   .all-page-padding {
     padding: 0rem;
   }
@@ -1009,6 +1037,48 @@ img {
 
 .accordion-container {
   max-width: 50rem;
+}
+
+.hero-puff {
+  background-color: white;
+  border-radius: 5rem;
+  padding: 4rem;
+  width: 70%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .hero-puff {
+    width: 80%;
+  }
+}
+@media (max-width: 300px) {
+  .hero-puff {
+    width: 100%;
+    padding: 0.2rem;
+    border-radius: 0rem;
+  }
+}
+
+.bg-hero {
+  height: 40rem;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .bg-hero {
+    height: 30rem;
+  }
+}
+@media (max-width: 300px) {
+  .bg-hero {
+    height: 25rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .heading-text {
+    font-size: 2rem;
+  }
 }
 
 body.mobile-menu-open {

@@ -5,7 +5,10 @@ import JalmasBild from "../../images/jalma.jpg";
 
 const Photographers = () => {
   return (
-    <div className="all-page-padding bg-stone-100 py-16 mx-auto md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <section
+      aria-label="Fotografer och utvecklare"
+      className="all-page-padding bg-stone-100 py-16 mx-auto md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+    >
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
           <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
@@ -25,7 +28,7 @@ const Photographers = () => {
           <div className="fotograf-text-content">
             <h3>Jalma Ingman</h3>
             <p className="fotografer-role">Grundare, Fotograf och Utvecklare</p>
-            <p className="fotogafer-stad">Utgår från Stockholm</p>
+            <p className="fotogafer-stad">Stockholm</p>
             <p className="fotografer-p-content">
               Jalma grundade aussiegalleriet och tog de första bilderna och
               skapade den första hemsidan!
@@ -37,7 +40,7 @@ const Photographers = () => {
           <div className="fotograf-text-content">
             <h3>Elin Selin</h3>
             <p className="fotografer-role">Fotograf och Utvecklare</p>
-            <p className="fotogafer-stad">Utgår från Mariefred</p>
+            <p className="fotogafer-stad">Mariefred</p>
             <p className="fotografer-p-content">
               Elin har fotograferat hundratals hundar till galleriet, utvecklat
               den nuvarande hemsidan och sköter instagram.
@@ -49,7 +52,7 @@ const Photographers = () => {
           <div className="fotograf-text-content">
             <h3>Emelia</h3>
             <p className="fotografer-role">Fotograf</p>
-            <p className="fotogafer-stad">Utgår från Timrå</p>
+            <p className="fotogafer-stad">Timrå</p>
             <p>
               Emelia har fotograferat för galleriet i många år och tar väldigt
               fina bilder. Hon är ofta på utställningar uppåt i landet.
@@ -61,7 +64,7 @@ const Photographers = () => {
           <div className="fotograf-text-content">
             <h3>Lina Malmqvist</h3>
             <p className="fotografer-role">Fotograf</p>
-            <p className="fotogafer-stad">Utgår från Ängelholm</p>
+            <p className="fotogafer-stad">Ängelholm</p>
             <p>
               Lina är nyast i gänget, en duktig fotograf med ett öga för att
               ställa upp hundar snyggt.
@@ -69,7 +72,7 @@ const Photographers = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -10,8 +10,11 @@
 }
 
 .fieldset-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+  @include medium-screen {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .big-screens {
@@ -21,14 +24,14 @@
 }
 
 .fieldset {
-  width: 100%;
   border-radius: 0.2rem;
+  max-width: 17rem;
   min-width: 17rem;
   margin-right: 1rem;
   cursor: pointer;
   legend {
     font-weight: 500;
-    width: 100%;
+    min-width: 100%;
     padding: 0.8rem;
     border: none;
     @include medium-screen {

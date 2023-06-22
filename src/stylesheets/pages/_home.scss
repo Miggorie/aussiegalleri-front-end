@@ -1,3 +1,35 @@
-// -----------------------------------------------------------------------------
-// This file contains styles that are specific to the home page.
-// -----------------------------------------------------------------------------
+@use "../abstracts" as a;
+
+.hero-puff {
+  background-color: white;
+  border-radius: 5rem;
+  padding: 4rem;
+  width: 70%;
+  margin: 0 auto;
+  @include a.small-screen {
+    width: 80%;
+  }
+  @include a.xxs-screen {
+    width: 100%;
+    padding: 0.2rem;
+    border-radius: 0rem;
+  }
+}
+
+.bg-hero {
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  @include a.small-screen {
+    height: 30rem;
+  }
+  @include a.xxs-screen {
+    height: 25rem;
+  }
+}
+
+.heading-text {
+  @include a.xxs-screen {
+    font-size: 2rem;
+  }
+}
