@@ -3,8 +3,8 @@ import hund from "../../images/hund2.jpg";
 
 const Faq = () => {
   return (
-    <div>
-      <div className="faq-container">
+    <main>
+      <section aria-label="Vanliga frågor" className="faq-container">
         <div className="faq-text-container">
           <h2 className="faq-title">Vanliga frågor</h2>
           <p className="faq-p">
@@ -15,12 +15,12 @@ const Faq = () => {
         <div className="accordion-container">
           <FaqText />
         </div>
-      </div>
+      </section>
       <div className="relative">
         <img className="object-cover w-full h-60 sm:h-96" src={hund} alt="" />
         <div className="absolute inset-0 bg-gray-900 bg-opacity-0" />
       </div>
-    </div>
+    </main>
   );
 };
 

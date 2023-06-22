@@ -4,10 +4,10 @@ import AboutUs from "./AboutUsSection";
 
 function About() {
   return (
-    <div>
+    <main>
       <AboutUs />
       <Photographers />
-    </div>
+    </main>
   );
 }
 

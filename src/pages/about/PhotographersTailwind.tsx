@@ -60,7 +60,7 @@ const Photographers = () => {
           </div>
         </div>
         <div className="fotograf-container">
-          <img src={LinasBild} alt="Jalma Ingman" />
+          <img src={LinasBild} alt="Lina Malmqvist" />
           <div className="fotograf-text-content">
             <h3>Lina Malmqvist</h3>
             <p className="fotografer-role">Fotograf</p>

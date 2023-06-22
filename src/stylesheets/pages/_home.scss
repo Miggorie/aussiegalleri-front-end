@@ -7,7 +7,8 @@
   width: 70%;
   margin: 0 auto;
   @include a.small-screen {
-    width: 80%;
+    width: 90%;
+    padding: 2rem;
   }
   @include a.xxs-screen {
     width: 100%;
@@ -21,7 +22,7 @@
   display: flex;
   align-items: center;
   @include a.small-screen {
-    height: 30rem;
+    height: 20rem;
   }
   @include a.xxs-screen {
     height: 25rem;

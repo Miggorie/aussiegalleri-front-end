@@ -13,6 +13,9 @@
   @include a.small-screen {
     margin: 1.2rem;
   }
+  @include a.xxs-screen {
+    margin: 0.2rem;
+  }
 }
 
 .accordion-container {
