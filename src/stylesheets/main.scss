@@ -14,4 +14,7 @@
 @use "pages";
 
 // 7. Themes
-@use "themes/default";
+@use "themes";
+
+// 7. Themes
+@use "admin";

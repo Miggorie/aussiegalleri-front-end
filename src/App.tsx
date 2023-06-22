@@ -6,6 +6,7 @@ import About from "./pages/about/About";
 import Faq from "./pages/faq/Faq";
 import Contact from "./pages/contact";
 import Home from "./pages/home/home";
+import Uppladding from "./adminpanel/admin_pages/Admin_Login";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DogPage from "./pages/gallery/DogPage";
@@ -28,6 +29,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<Faq />} />
+          <Route path="uppladdning" element={<Uppladding />} />
         </Routes>
         <Footer />
       </BrowserRouter>

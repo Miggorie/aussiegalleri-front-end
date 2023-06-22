@@ -1119,4 +1119,13 @@ img {
 
 body.mobile-menu-open {
   overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.login-container input {
+  border: solid black 2px;
 }/*# sourceMappingURL=main.css.map */
