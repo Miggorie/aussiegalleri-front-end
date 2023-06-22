@@ -18,7 +18,7 @@ function Nav() {
       <div className="navbar-flexbox">
         <div className="mobile-view-container">
           <Link className="home-text" to="/" onClick={closeMenu}>
-            Aussiegalleri
+            Aussie&shy;galleri
           </Link>
           <div className="menu-icon-container">
             <button
@@ -51,7 +51,7 @@ function Nav() {
             className={menuIsOpen ? "mobile-menu-open" : "mobile-menu-hidden"}
           >
             <div className="mobile-view-container">
-              <Link to="/" onClick={closeMenu}>
+              <Link className="logga-hidden" to="/" onClick={closeMenu}>
                 <span className="visually-hidden">Gå till startsidan</span>
                 <img src={logga} alt="Aussiegalleriets logga" />
               </Link>

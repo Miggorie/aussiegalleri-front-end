@@ -108,6 +108,12 @@ img {
     width: 100%;
   }
 }
+@media (max-width: 300px) {
+  .fieldset {
+    margin-left: 0rem;
+    min-width: 0rem;
+  }
+}
 
 .button-content {
   display: flex;
@@ -143,6 +149,11 @@ img {
   .filter-container {
     background-color: white;
     border: none;
+  }
+}
+@media (max-width: 300px) {
+  .filter-container {
+    padding: 0.2rem;
   }
 }
 
@@ -207,6 +218,9 @@ img {
 
 .checkbox-list {
   visibility: visible;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
   opacity: 1;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -287,6 +301,12 @@ img {
     padding-top: 0rem;
   }
 }
+@media (max-width: 300px) {
+  .dog-page-container {
+    padding: 0.2rem;
+    padding-top: 0rem;
+  }
+}
 
 .doglist-container {
   display: flex;
@@ -323,6 +343,12 @@ img {
 @media (max-width: 640px) {
   .dog-ul li {
     width: 100%;
+  }
+}
+@media (max-width: 300px) {
+  .dog-ul li {
+    width: 100%;
+    padding: 0.2rem;
   }
 }
 .dog-ul li img {
@@ -414,6 +440,11 @@ img {
     display: block;
   }
 }
+@media (max-width: 300px) {
+  .navbar-flexbox {
+    padding: 0.2rem;
+  }
+}
 
 .menu-link:hover, .menu-link:active {
   text-decoration-line: underline;
@@ -431,6 +462,7 @@ img {
 
 .mobile-view-container {
   width: 100%;
+  padding: 0.2rem;
 }
 .mobile-view-container img {
   display: none;
@@ -448,9 +480,22 @@ img {
     justify-content: space-between;
   }
 }
+@media (max-width: 300px) {
+  .mobile-view-container {
+    display: block;
+  }
+}
+
+@media (max-width: 300px) {
+  .logga-hidden {
+    display: none;
+  }
+}
 
 .home-text {
   font-size: 2rem;
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 
 .nav-ul {
@@ -467,11 +512,25 @@ img {
     font-size: 1.4rem;
   }
 }
+@media (max-width: 300px) {
+  .nav-ul li {
+    margin-left: 0rem;
+    padding: 0.3rem;
+    font-size: 1.4rem;
+  }
+}
 @media (max-width: 1024px) {
   .nav-ul {
     margin-top: 1rem;
     flex-direction: column;
     align-items: center;
+  }
+}
+@media (max-width: 300px) {
+  .nav-ul {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: start;
   }
 }
 

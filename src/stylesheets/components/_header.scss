@@ -19,6 +19,9 @@
   @include a.medium-screen {
     display: block;
   }
+  @include a.xxs-screen {
+    padding: 0.2rem;
+  }
 }
 
 .menu-link {
@@ -40,6 +43,7 @@
 
 .mobile-view-container {
   width: 100%;
+  padding: 0.2rem;
   img {
     display: none;
     @include a.medium-screen {
@@ -52,10 +56,19 @@
     display: flex;
     justify-content: space-between;
   }
+  @include a.xxs-screen {
+    display: block;
+  }
 }
 
+.logga-hidden {
+  @include a.xxs-screen {
+    display: none;
+  }
+}
 .home-text {
   font-size: 2rem;
+  hyphens: auto;
 }
 
 .nav-ul {
@@ -69,12 +82,23 @@
       padding: 1rem;
       font-size: 1.4rem;
     }
+    @include a.xxs-screen {
+      margin-left: 0rem;
+      padding: 0.3rem;
+      font-size: 1.4rem;
+    }
   }
 
   @include a.medium-screen {
     margin-top: 1rem;
     flex-direction: column;
     align-items: center;
+  }
+
+  @include a.xxs-screen {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: start;
   }
 }
 

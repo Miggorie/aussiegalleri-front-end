@@ -26,6 +26,10 @@
     padding: 1rem;
     padding-top: 0rem;
   }
+  @include a.xxs-screen {
+    padding: 0.2rem;
+    padding-top: 0rem;
+  }
 }
 
 .doglist-container {
@@ -56,6 +60,10 @@
 
     @include a.xs-screen {
       width: 100%;
+    }
+    @include a.xxs-screen {
+      width: 100%;
+      padding: 0.2rem;
     }
 
     img {

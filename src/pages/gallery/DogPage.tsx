@@ -90,7 +90,7 @@ function DogPage() {
         <div>
           <main className="dog-page-container">
             <div className="dogpage-header">
-              <h1 className="page-title">Aussiegalleriet</h1>
+              <h1 className="page-title">Galleri</h1>
               <div className="search-filter-container">
                 <div className="searchbar-container">
                   <SearchBar

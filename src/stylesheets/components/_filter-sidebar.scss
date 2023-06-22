@@ -47,6 +47,10 @@
   @include small-screen {
     width: 100%;
   }
+  @include xxs-screen {
+    margin-left: 0rem;
+    min-width: 0rem;
+  }
 }
 
 .button-content {
@@ -79,6 +83,9 @@
   @include medium-screen {
     background-color: #ffff;
     border: none;
+  }
+  @include xxs-screen {
+    padding: 0.2rem;
   }
 }
 
@@ -143,6 +150,9 @@
 
 .checkbox-list {
   visibility: visible;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
   opacity: 1;
   margin-top: 1rem;
   margin-bottom: 2rem;
