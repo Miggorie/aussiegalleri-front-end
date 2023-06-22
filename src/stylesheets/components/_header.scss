@@ -119,7 +119,6 @@
 .mobile-menu-hidden {
   @include a.medium-screen {
     height: 0;
-    overflow: hidden;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s linear 0.2s, opacity 0.2s linear;
@@ -131,6 +130,7 @@
   opacity: 1;
   transition: visibility 0s linear, opacity 0.2s linear;
   @include a.medium-screen {
+    overflow: auto;
     position: fixed;
     top: 0;
     left: 0;

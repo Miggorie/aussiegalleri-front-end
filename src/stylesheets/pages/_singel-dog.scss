@@ -13,6 +13,9 @@
   @include a.large-screen {
     padding: 2rem 2rem;
   }
+  @include a.xxs-screen {
+    padding: 0.2rem 0.2rem;
+  }
 }
 .singel-dog-container {
   display: flex;
@@ -42,6 +45,11 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+  @include a.xxs-screen {
+    padding: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .info-card {
@@ -63,6 +71,9 @@
   @include a.medium-screen {
     display: block;
     padding: 1.5rem;
+  }
+  @include a.xxs-screen {
+    padding: 0.2rem;
   }
 }
 
