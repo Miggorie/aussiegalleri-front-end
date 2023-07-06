@@ -10,7 +10,7 @@ interface Props {
 const GetParentsInfo: React.FC<Props> = ({ currentDog }) => {
   const [parents, setParents] = useState([]);
   const currentUrl =
-    "http://aussiegalleri.se/api/singledog/litterinfo.php?url=" +
+    "https://aussiegalleri.se/api/singledog/litterinfo.php?url=" +
     currentDog.url;
 
   useEffect(() => {

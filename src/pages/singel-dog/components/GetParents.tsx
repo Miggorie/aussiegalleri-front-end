@@ -9,9 +9,9 @@ interface Props {
 const GetParents: React.FC<Props> = ({ currentDog }) => {
   const [parents, setParents] = useState([]);
   const currentUrl =
-    "http://aussiegalleri.se/api/singledog/getparents.php?url=" +
+    "https://aussiegalleri.se/api/singledog/getparents.php?url=" +
     currentDog.url;
-  const baseUrl = "http://aussiegalleri.se/images/";
+  const baseUrl = "https://aussiegalleri.se/images/";
 
   useEffect(() => {
     async function fetchOffspring() {

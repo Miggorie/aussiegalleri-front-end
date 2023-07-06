@@ -9,9 +9,9 @@ interface Props {
 const GetLitterMates: React.FC<Props> = ({ currentDog }) => {
   const [littermate, setLittermate] = useState([]);
   const currentUrl =
-    "http://aussiegalleri.se/api/singledog/getlittermates.php?url=" +
+    "https://aussiegalleri.se/api/singledog/getlittermates.php?url=" +
     currentDog.url;
-  const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
+  const baseUrl = "https://aussiegalleri.se/images/thumbnails/";
 
   useEffect(() => {
     async function fetchLitterMate() {
