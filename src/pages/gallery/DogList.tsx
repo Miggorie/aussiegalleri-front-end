@@ -97,7 +97,7 @@ function DogList({
     });
   }
 
-  const baseUrl = "http://aussiegalleri.se/images/";
+  const baseUrl = "https://aussiegalleri.se/images/";
 
   return (
     <div>

@@ -8,7 +8,7 @@ const OtherStatistic = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://aussiegalleri.se/api/statistics/statistics.php"
+          "https://aussiegalleri.se/api/statistics/statistics.php"
         );
         const data = response.data;
         setDogcount(data);

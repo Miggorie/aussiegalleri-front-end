@@ -1,6 +1,6 @@
 {
   "name": "aussiegalleri-public",
-  "homepage": "http://aktivaussie.se/aussiegalleri",
+  "homepage": "https://www.beta.aussiegalleri.se",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

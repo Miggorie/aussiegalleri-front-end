@@ -25,7 +25,7 @@ const Provider = ({ children }: Props) => {
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://aussiegalleri.se/api/search/alldogs.php"
+        "https://aussiegalleri.se/api/search/alldogs.php"
       );
       const data = await response.json();
       setDogs(data.dogs);

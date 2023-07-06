@@ -7,13 +7,13 @@ import OtherStatistics from "./components/OtherStatistics";
 
 function Home() {
   const [latestDogs, setLatestDogs] = useState([]);
-  const baseUrl = "http://aussiegalleri.se/images/thumbnails/";
+  const baseUrl = "https://aussiegalleri.se/images/thumbnails/";
 
   useEffect(() => {
     async function fetchLatestDogs() {
       try {
         const response = await fetch(
-          "http://aussiegalleri.se/api/search/latestdogs.php"
+          "https://aussiegalleri.se/api/search/latestdogs.php"
         );
         if (!response.ok) {
           throw new Error(response.statusText);
