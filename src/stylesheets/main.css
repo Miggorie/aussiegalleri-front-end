@@ -1,6 +1,9 @@
 /**
  * Set up a decent box model on the root element
  */
+--root {
+  --bgColor: white;
+}
 html {
   box-sizing: border-box;
 }
@@ -54,7 +57,8 @@ img {
 }
 
 .checkboxlabel {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .checkbox-input {
@@ -170,7 +174,7 @@ img {
 }
 @media (max-width: 1024px) {
   .filter-container {
-    background-color: white;
+    background-color: var(--bgColor);
     border: none;
   }
 }
@@ -189,7 +193,7 @@ img {
 .filter-checkbox {
   padding-bottom: 1rem;
 }
-.filter-checkbox input[type=checkbox] {
+.filter-checkbox input[type="checkbox"] {
   padding: 0.5rem;
   margin-right: 8px;
   color: #57534f;
@@ -260,12 +264,13 @@ img {
 
 .clear-filter {
   background-color: #57534f;
-  color: white;
+  color: var(--bgColor);
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
-  border: solid 2px white;
+  border: solid 2px var(--bgColor);
 }
-.clear-filter:hover, .clear-filter:focus {
+.clear-filter:hover,
+.clear-filter:focus {
   background-color: #c9c3bb;
   color: black;
 }
@@ -281,9 +286,10 @@ img {
     padding: 0.5rem 1rem;
   }
 }
-.mobile-filter:hover, .mobile-filter:focus {
+.mobile-filter:hover,
+.mobile-filter:focus {
   background-color: rgb(68, 68, 68);
-  color: white;
+  color: var(--bgColor);
 }
 @media (max-width: 640px) {
   .mobile-filter {
@@ -296,7 +302,8 @@ img {
   margin-top: 1rem;
   margin-bottom: 2.5rem;
   font-size: 1rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 @media (max-width: 640px) {
   .dog-name {
@@ -383,7 +390,8 @@ img {
   margin-top: 1rem;
   margin-bottom: 2.5rem;
   font-size: 1rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin-top: 0.2rem;
   color: rgb(92, 92, 92);
   font-weight: 550;
@@ -466,7 +474,7 @@ img {
 }
 
 .navbar-flexbox {
-  color: white;
+  color: var(--bgColor);
   display: flex;
   align-items: center;
   padding: 1.5rem;
@@ -484,7 +492,8 @@ img {
   }
 }
 
-.menu-link:hover, .menu-link:active {
+.menu-link:hover,
+.menu-link:active {
   text-decoration-line: underline;
   text-decoration-thickness: 2px;
 }
@@ -536,7 +545,7 @@ img {
 .home-text {
   font-size: 2rem;
   -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 .nav-ul {
@@ -624,7 +633,7 @@ img {
 .hamburger-container span {
   width: 25px;
   height: 4px;
-  background-color: white;
+  background-color: var(--bgColor);
   margin: 4px 0;
   transition: 0.1s;
   display: block;
@@ -649,7 +658,7 @@ img {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
 }
@@ -769,7 +778,7 @@ img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
 }
 .fotografer-grid h3 {
@@ -826,7 +835,7 @@ img {
 .fotograf-container {
   max-width: 45%;
   margin: 1rem;
-  background-color: white;
+  background-color: var(--bgColor);
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -1049,7 +1058,8 @@ img {
   margin-top: 1rem;
   margin-bottom: 2.5rem;
   font-size: 2.2rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .faq-p {
@@ -1075,7 +1085,7 @@ img {
 }
 
 .hero-puff {
-  background-color: white;
+  background-color: var(--bgColor);
   border-radius: 5rem;
   padding: 4rem;
   width: 70%;
@@ -1128,4 +1138,4 @@ body.mobile-menu-open {
 }
 .login-container input {
   border: solid black 2px;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
