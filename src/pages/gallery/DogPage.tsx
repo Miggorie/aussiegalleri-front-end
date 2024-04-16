@@ -8,7 +8,6 @@ import {
   ageOptions,
 } from "./components/FilterOptions";
 import { Checkbox } from "./components/Checkbox";
-import "../../stylesheets/main.css";
 import { useMediaQuery } from "react-responsive";
 
 const renderListItems = (

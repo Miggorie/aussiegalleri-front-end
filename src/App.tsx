@@ -10,6 +10,7 @@ import Uppladding from "./adminpanel/admin_pages/Admin_Login";
 import DogsContext from "./context/DogsContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DogPage from "./pages/gallery/DogPage";
+import "./index";
 
 function App() {
   const { fetchData } = useContext(DogsContext);
