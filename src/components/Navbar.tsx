@@ -14,9 +14,9 @@ function Nav() {
   };
 
   return (
-    <div className="navbar-container">
-      <div className="navbar-flexbox">
-        <div className="mobile-view-container">
+    <div className="navbar-container bg-headerbg w-full">
+      <div className="navbar-flexbox text-white flex items-center p-1.5 max-[w-103] m-auto ">
+        <div className="mobile-view-container w-full p-0.2 hidden">
           <Link className="home-text" to="/" onClick={closeMenu}>
             Aussie&shy;galleri
           </Link>
@@ -53,7 +53,7 @@ function Nav() {
             <div className="mobile-view-container">
               <Link className="logga-hidden" to="/" onClick={closeMenu}>
                 <p>Gå till startsidan</p>
-                <img src={logga} alt="Aussiegalleriets logga" />
+                <img src={logga} alt="Aussiegalleriets logga" className="" />
               </Link>
               <button
                 className="mobile-menu close-menu"
@@ -78,7 +78,7 @@ function Nav() {
                 Meny
               </button>
             </div>
-            <ul className="nav-ul">
+            <ul className="nav-ul flex items-center justify-around flex-row [&>*]:ml-3 [&>*]:min-w-7">
               <li>
                 <Link
                   className={`menu-link ${
