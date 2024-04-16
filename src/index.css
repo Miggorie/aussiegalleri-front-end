@@ -15,3 +15,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* @layer components {
+  .test {
+    @apply bg-darktext w-auto border-spacing-4 m-4 p-2;
+  }
+} */
