@@ -1,7 +1,6 @@
-import Accordion from "../../components/Accordion";
-
-function FaqText() {
-  const items = [
+import { AccordionItem } from "../../interfaces/Interfaces";
+const FaqText = () => {
+  const items: AccordionItem[] = [
     {
       id: "1",
       label: "Kostar fotograferingen och får jag bilderna?",
@@ -34,7 +33,7 @@ function FaqText() {
     },
   ];
 
-  return <Accordion items={items} />;
-}
+  return items;
+};
 
 export default FaqText;

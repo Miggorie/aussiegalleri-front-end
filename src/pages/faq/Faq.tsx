@@ -1,5 +1,7 @@
 import FaqText from "./FaqText";
 import hund from "../../images/hund2.jpg";
+import Accordion from "../../components/Accordion";
+import { AccordionItem } from "../../interfaces/Interfaces";
 
 const Faq = () => {
   return (
@@ -13,7 +15,7 @@ const Faq = () => {
           </p>
         </div>
         <div className="accordion-container">
-          <FaqText />
+          <Accordion items={FaqText()} />
         </div>
       </section>
       <div className="relative">
