@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { GoChevronDown, GoChevronLeft } from "react-icons/go";
-import { FaqItem } from "../../interfaces/Interfaces";
+import { AccordionItem } from "../interfaces/Interfaces";
 
-function Accordion({ items }: { items: FaqItem[] }) {
+function Accordion({ items }: { items: AccordionItem[] }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   //handle the click, and close the tab.

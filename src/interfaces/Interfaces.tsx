@@ -23,7 +23,7 @@ export interface Litter {
   litterID: string;
 }
 
-export interface FaqItem {
+export interface AccordionItem {
   id?: string;
   label?: string;
   content?: string;
