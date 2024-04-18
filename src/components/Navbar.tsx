@@ -79,68 +79,32 @@ function Nav() {
               </button>
             </div>
             <ul className="nav-ul">
-              <li>
-                <Link
-                  className={`menu-link ${
-                    location.pathname === "/dogs" ? "active-link" : ""
-                  }`}
-                  to="/dogs"
-                  onClick={closeMenu}
-                  aria-current={
-                    location.pathname === "/dogs" ? "page" : undefined
-                  }
-                >
-                  Galleriet
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`menu-link ${
-                    location.pathname === "/about" ? "active-link" : ""
-                  }`}
-                  to="/about"
-                  onClick={closeMenu}
-                  aria-current={
-                    location.pathname === "/about" ? "page" : undefined
-                  }
-                >
-                  Om galleriet
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`menu-link ${
-                    location.pathname === "/faq" ? "active-link" : ""
-                  }`}
-                  to="/faq"
-                  onClick={closeMenu}
-                  aria-current={
-                    location.pathname === "/faq" ? "page" : undefined
-                  }
-                >
-                  Vanliga frågor
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`menu-link ${
-                    location.pathname === "/contact" ? "active-link" : ""
-                  }`}
-                  to="/contact"
-                  onClick={closeMenu}
-                  aria-current={
-                    location.pathname === "/contact" ? "page" : undefined
-                  }
-                >
-                  Kontakta oss
-                </Link>
-              </li>
+              <li>{menuLink("/dogs", "Galleriet")}</li>
+              <li>{menuLink("/about", "Om galleriet")}</li>
+              <li>{menuLink("/faq", "Vanliga frågor")}</li>
+              <li>{menuLink("/contact", "Kontakta oss")}</li>
             </ul>
           </div>
         </nav>
       </div>
     </div>
   );
+  function menuLink(url: string, menuTitle: string) {
+    {
+      return (
+        <Link
+          className={`menu-link ${
+            location.pathname === url ? "active-link" : ""
+          }`}
+          to={url}
+          onClick={closeMenu}
+          aria-current={location.pathname === url ? "page" : undefined}
+        >
+          {menuTitle}
+        </Link>
+      );
+    }
+  }
 }
 
 export default Nav;
