@@ -14,13 +14,13 @@ function Nav() {
   };
 
   return (
-    <div className="navbar-container bg-headerbg w-full">
-      <div className="navbar-flexbox text-white flex items-center p-1.5 max-[w-103] m-auto ">
-        <div className="mobile-view-container w-full p-0.2 hidden">
+    <div className="navbar-container bg-headerbg flex items-end w-full ">
+      <div className="navbar-flexbox text-white flex items-end p-6 max-[w-103] m-auto w-full ">
+        <div className="mobile-view-container w-full p-0.2">
           <Link className="home-text" to="/" onClick={closeMenu}>
             Aussie&shy;galleri
           </Link>
-          <div className="menu-icon-container">
+          <div className="menu-icon-container hidden md:block">
             <button
               className="mobile-menu"
               aria-expanded={menuIsOpen}
@@ -41,7 +41,7 @@ function Nav() {
                 <span className="bar2"></span>
                 <span className="bar3"></span>
               </span>
-              Meny
+              Meny1
             </button>
           </div>
         </div>
@@ -51,9 +51,9 @@ function Nav() {
             className={menuIsOpen ? "mobile-menu-open" : "mobile-menu-hidden"}
           >
             <div className="mobile-view-container">
-              <Link className="logga-hidden" to="/" onClick={closeMenu}>
+              <Link className="logga-hidden hidden" to="/" onClick={closeMenu}>
                 <p>Gå till startsidan</p>
-                <img src={logga} alt="Aussiegalleriets logga" className="" />
+                <img src={logga} alt="Aussiegalleriets logga" />
               </Link>
               <button
                 className="mobile-menu close-menu"
@@ -75,10 +75,11 @@ function Nav() {
                   <span className="bar2"></span>
                   <span className="bar3"></span>
                 </span>
-                Meny
+                Meny2
               </button>
             </div>
-            <ul className="nav-ul flex items-center justify-around flex-row [&>*]:ml-3 [&>*]:min-w-7">
+            {/* min width needs to be configed before can use properly with min-width: 7rem */}
+            <ul className="nav-ul flex flex-row [&>li]:ml-12 [&>li]:min-w-0">
               <li>
                 <Link
                   className={`menu-link ${
