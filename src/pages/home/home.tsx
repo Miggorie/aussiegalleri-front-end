@@ -13,7 +13,7 @@ function Home() {
     async function fetchLatestDogs() {
       try {
         const response = await fetch(
-          "https://aussiegalleri.se/api/search/latestdogs.php"
+          "https://www.aussiegalleri.se/api/php/search/latestdogs.php"
         );
         if (!response.ok) {
           throw new Error(response.statusText);
