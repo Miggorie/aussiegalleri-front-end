@@ -106,10 +106,7 @@ function DogList({
           <li key={searchDog.url} className="group">
             <Link to={`/dogs/${searchDog.url}`}>
               <div className="">
-                <img
-                  src={baseUrl + searchDog.date + "/" + searchDog.standLeft}
-                  alt=""
-                />
+                <img src={baseUrl + "gallery/" + searchDog.standLeft} alt="" />
               </div>
               <p className="dog-name">{searchDog.name}</p>
             </Link>
